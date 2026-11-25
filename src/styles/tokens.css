@@ -1,0 +1,65 @@
+:root {
+  /* Tier 0: Sidebar Chrome */
+  --color-sidebar-bg: #14243a;
+  --color-sidebar-border: #1e385b;
+  --color-sidebar-well: #0d1826;
+  --color-sidebar-hover: #1b2f4a;
+
+  /* Tier 1 & 2: Canvas & Surfaces */
+  --color-canvas-bg: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee9ff;
+  --color-surface-container-highest: #d8e3fa;
+  --color-surface-dim: #cfdaf1;
+  --color-surface-tint: #4c5f7c;
+
+  /* Brand & Interactive */
+  --color-primary: #01162f;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #172b45;
+  --color-on-primary-container: #7f93b2;
+  --color-primary-fixed: #d4e3ff;
+  --color-primary-fixed-dim: #b4c8e9;
+  --color-secondary: #00696d;
+  --color-secondary-accent: #167c80;
+  --color-secondary-hover: #005a5e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #9af1f5;
+  --color-on-secondary-container: #007074;
+  --color-tertiary: #001826;
+  --color-tertiary-container: #002d45;
+  --color-on-tertiary-container: #6f96b4;
+
+  /* Text & Borders */
+  --color-on-surface: #111c2c;
+  --color-on-surface-variant: #44474d;
+  --color-text-secondary: #64748b;
+  --color-border-subtle: #e2e8f0;
+  --color-outline: #74777e;
+  --color-outline-variant: #c4c6ce;
+
+  /* Semantic Status */
+  --color-status-success: #237a57;
+  --color-status-success-bg: #ecfdf5;
+  --color-status-warning: #a56b18;
+  --color-status-warning-bg: #fffbeb;
+  --color-status-error: #b54747;
+  --color-status-error-bg: #fef2f2;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Spacing & Radii */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}

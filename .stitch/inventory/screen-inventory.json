@@ -1,0 +1,184 @@
+[
+  {
+    "slug": "overview-dashboard",
+    "screenId": "3d33c6cd25d64802b3fdaa248e4c3968",
+    "title": "Overview Dashboard",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 4324
+    },
+    "htmlFile": "source/screens/overview-dashboard.html",
+    "screenshotFile": "source/screenshots/overview-dashboard.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "action-inbox",
+    "screenId": "d503bc7e432c483cb7e656ed6bc7ef85",
+    "title": "Action Inbox",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2926
+    },
+    "htmlFile": "source/screens/action-inbox.html",
+    "screenshotFile": "source/screenshots/action-inbox.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "approvals-step-up",
+    "screenId": "0c0df5bd54a441f2ad6b9cbce9b3b864",
+    "title": "Approvals & Step-Up",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2394
+    },
+    "htmlFile": "source/screens/approvals-step-up.html",
+    "screenshotFile": "source/screenshots/approvals-step-up.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "voice-biometric-registry",
+    "screenId": "b30f43a582a545dea8b6d66a571ce758",
+    "title": "Voice Biometric Registry",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 3614
+    },
+    "htmlFile": "source/screens/voice-biometric-registry.html",
+    "screenshotFile": "source/screenshots/voice-biometric-registry.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "simulated-finance-beneficiary",
+    "screenId": "a21a208dfe2640c7a542a62aef436022",
+    "title": "Simulated Finance Beneficiary Change Authorization",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 4726
+    },
+    "htmlFile": "source/screens/simulated-finance-beneficiary.html",
+    "screenshotFile": "source/screenshots/simulated-finance-beneficiary.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "webauthn-step-up-permit",
+    "screenId": "433a6c1ae9f24983b78003a414a41e29",
+    "title": "WebAuthn Step-Up & Final Scoped Permit",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2786
+    },
+    "htmlFile": "source/screens/webauthn-step-up-permit.html",
+    "screenshotFile": "source/screenshots/webauthn-step-up-permit.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "break-glass-recovery",
+    "screenId": "81cc3ca171b4496d98c50b790a7a6478",
+    "title": "Break-Glass Recovery Console",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 3082
+    },
+    "htmlFile": "source/screens/break-glass-recovery.html",
+    "screenshotFile": "source/screenshots/break-glass-recovery.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "integrations-webhook-monitor",
+    "screenId": "d4e9e33730654762861ec3ace2cce7a9",
+    "title": "Integrations & Webhook Monitor",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2680
+    },
+    "htmlFile": "source/screens/integrations-webhook-monitor.html",
+    "screenshotFile": "source/screenshots/integrations-webhook-monitor.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "security-policies",
+    "screenId": "7bfcfad5a0054f4cb3e872cc23f74f4c",
+    "title": "Security Policies",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2178
+    },
+    "htmlFile": "source/screens/security-policies.html",
+    "screenshotFile": "source/screenshots/security-policies.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "audit-trail",
+    "screenId": "771d8fb69cb240a3937f53d115b1b0a3",
+    "title": "Audit Trail",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2048
+    },
+    "htmlFile": "source/screens/audit-trail.html",
+    "screenshotFile": "source/screenshots/audit-trail.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "security-incidents",
+    "screenId": "08af03b8df7e406a83d80fe4a9124521",
+    "title": "Security Incidents",
+    "deviceType": "DESKTOP",
+    "screenshotDimensions": {
+      "width": 2650,
+      "height": 2048
+    },
+    "htmlFile": "source/screens/security-incidents.html",
+    "screenshotFile": "source/screenshots/security-incidents.png",
+    "imageMetadata": {
+      "mimeType": "image/png"
+    }
+  },
+  {
+    "slug": "system-workflow-diagram",
+    "screenId": "17202429964320057792",
+    "title": "ACTIONLOCK \u2014 Enterprise System Design & User Workflow.jpg",
+    "deviceType": "IMAGE",
+    "screenshotDimensions": {
+      "width": 7750,
+      "height": 14084
+    },
+    "htmlFile": null,
+    "screenshotFile": "source/screenshots/system-workflow-diagram.jpg",
+    "imageMetadata": {
+      "width": 7750,
+      "height": 14084,
+      "mimeType": "image/jpeg"
+    }
+  }
+]

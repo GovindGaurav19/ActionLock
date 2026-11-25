@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c4c6ce", "surface-container-lowest": "#ffffff", "on-surface": "#111c2c", "on-tertiary": "#ffffff", "secondary": "#00696d", "inverse-primary": "#b4c8e9", "border-subtle": "#E2E8F0", "secondary-fixed-dim": "#7ed4d8", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#a4cbeb", "on-tertiary-fixed-variant": "#214a65", "on-background": "#111c2c", "error-container": "#ffdad6", "outline": "#74777e", "background": "#f9f9ff", "status-success": "#237A57", "tertiary-fixed": "#c9e6ff", "on-primary-container": "#7f93b2", "on-primary": "#ffffff", "surface-container-low": "#f0f3ff", "on-primary-fixed-variant": "#354863", "on-tertiary-fixed": "#001e2f", "status-error": "#B54747", "tertiary-container": "#002d45", "surface-bright": "#f9f9ff", "on-secondary": "#ffffff", "inverse-surface": "#263142", "canvas-bg": "#F5F7FA", "on-secondary-container": "#007074", "surface-tint": "#4c5f7c", "secondary-container": "#9af1f5", "on-primary-fixed": "#061c35", "on-error": "#ffffff", "surface-container-high": "#dee9ff", "primary-fixed": "#d4e3ff", "inverse-on-surface": "#ebf1ff", "tertiary": "#001826", "surface": "#FFFFFF", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004f52", "surface-variant": "#d8e3fa", "on-tertiary-container": "#6f96b4", "on-surface-variant": "#44474d", "secondary-fixed": "#9af1f5", "primary-container": "#172b45", "primary": "#01162f", "error": "#ba1a1a", "surface-container-highest": "#d8e3fa", "text-secondary": "#64748B", "sidebar-bg": "#14243A", "primary-fixed-dim": "#b4c8e9", "surface-dim": "#cfdaf1", "status-warning": "#A56B18", "on-secondary-fixed": "#002021" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "margin": "1.5rem", "space-lg": "1rem", "space-sm": "0.5rem", "space-xl": "1.5rem" }, "fontFamily": { "headline-xl": ["Inter"], "mono-badge": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "mono-data": ["JetBrains Mono"], "label-sm": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "mono-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script></head><body class="bg-canvas-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar-bg z-50 flex flex-col border-r border-[#1E385B] text-inverse-on-surface select-none"><div class="p-space-lg border-b border-[#1E385B] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ACTIONLOCK Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDJAutoi8SJpIsza-EsjijR_avsYKLxuxToxw0bjY-XHlw3ibfClBbZ_jHsarARVfbHRZRAKZ7WTN4GB1r0SO_RyY9GNgnsDW6zDIqbhvAP_0A0-8Sf9ZvcPLjX-_XX3xWOeJZLwUnU2jsmi6MYfdyQUwn1yG7DDaLEU4nv15aswynFLp9dKx6zNxJtw3a3zZZB4roubQZaH2r41qnFRmhQN2sXN0Wo4CJvhmTLrgM"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">ACTIONLOCK</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-primary-container text-primary-fixed border border-[#214a65] tracking-wider">ENTERPRISE</span></div><div class="flex items-center gap-space-xs px-2 py-1 rounded bg-[#0d1826] border border-[#1e385b] w-fit"><span class="h-1.5 w-1.5 rounded-full bg-status-warning animate-pulse"></span><span class="font-mono-badge text-mono-badge text-text-secondary">DEMO ENV · FIXTURES</span></div></div><div class="flex-1 overflow-y-auto py-space-sm px-space-sm"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-white border-l-2 border-secondary font-medium"><a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded transition-colors group bg-primary-container text-white border-l-2 border-secondary font-medium" data-path="overview-dashboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">dashboard</span><span class="font-label-md text-label-md">Overview</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="action-inbox" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">inbox</span><span class="font-label-md text-label-md">Action Inbox</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.2 rounded bg-error/20 text-error-container border border-error/30">3 pending</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="new-protected-action" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">add_moderator</span><span class="font-label-md text-label-md">New Protected Action</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="approvals-step-up" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">verified_user</span><span class="font-label-md text-label-md">Approvals &amp; Step-Up</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="voice-registry" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">record_voice_over</span><span class="font-label-md text-label-md">Voice Registry</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="security-policies" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">policy</span><span class="font-label-md text-label-md">Security Policies</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="integrations" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">integration_instructions</span><span class="font-label-md text-label-md">Integrations</span></div><span class="font-mono-badge text-mono-badge text-text-secondary opacity-75">3 LIVE</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="webhook-monitor" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">webhook</span><span class="font-label-md text-label-md">Webhook Monitor</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="audit-trail" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">receipt_long</span><span class="font-label-md text-label-md">Audit Trail</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="security-incidents" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">fitbit_push_ups</span><span class="font-label-md text-label-md">Security Incidents</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="break-glass-recovery" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-error">emergency_home</span><span class="font-label-md text-label-md text-error-container">Break-Glass Recovery</span></div></a></nav></div><div class="p-space-md border-t border-[#1E385B] bg-[#0d1826]"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-[#1e385b]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/><span class="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-status-success ring-1 ring-[#0d1826]"></span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md font-medium text-white truncate max-w-[90px]">Marcus Vance</span><span class="font-mono-badge text-[9px] uppercase px-1 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Owner</span></div><span class="font-body-sm text-[11px] text-text-secondary truncate max-w-[130px]">Principal SecOps</span></div></div><button class="text-text-secondary hover:text-white transition-colors p-1"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface border-b border-border-subtle z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">shield</span><span>Gateway</span><span class="text-outline-variant">/</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-border-subtle text-on-surface cursor-pointer hover:bg-surface-container transition-colors"><span class="font-medium">Acme Global Infrastructure</span><span class="font-mono-badge text-mono-badge text-text-secondary">(US-East)</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div></div><div class="relative w-80"><div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"><span class="material-symbols-outlined text-[18px] text-text-secondary">search</span></div><input class="w-full h-9 pl-8 pr-12 rounded border border-border-subtle bg-canvas-bg font-body-sm text-body-sm text-on-surface placeholder:text-text-secondary focus:outline-none focus:border-secondary focus:bg-surface transition-all" placeholder="Search Action ID, Commit SHA, Envelope..." type="text"/><div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none"><kbd class="font-mono-badge text-[10px] px-1.5 py-0.5 bg-surface rounded border border-border-subtle text-text-secondary shadow-sm">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#ecfdf5] border border-[rgba(35,122,87,0.25)] text-status-success font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-status-success"></span>API GATEWAY: OPERATIONAL</div><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.25)] text-secondary font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>DETECTIFAI: HEALTHY</div></div><div class="h-4 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Documentation"><span class="material-symbols-outlined text-[20px]">menu_book</span></button><button class="relative w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Alerts"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-error"></span></button><a class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#fef2f2] border border-[rgba(181,71,71,0.25)] text-status-error hover:bg-error hover:text-white transition-all font-mono-badge text-mono-badge" data-path="break-glass-recovery" href="#"><span class="material-symbols-outlined text-[16px]">warning</span><span>BREAK-GLASS</span></a></div><div class="h-8 w-px bg-border-subtle"></div><div class="flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-border-subtle cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/></div></div></header><main class="w-full pt-16 min-h-screen bg-canvas-bg"><div class="flex flex-col w-full">
+<!-- Content Container with strict spatial rhythm -->
+<div class="p-space-xl flex flex-col gap-space-xl max-w-[1600px] mx-auto w-full">
+<!-- Top Breadcrumb & Page Header -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">record_voice_over</span>
+<span>Voice Registry</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium">Enrolled Speakers &amp; Biometric Profiles</span>
+<span class="text-outline-variant">/</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-medium">HSM_VAULT_ZONE_01</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+              Voice Biometric Registry &amp; Consent Management
+            </h1>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.25)] text-secondary font-mono-badge text-mono-badge">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+              EIDOS ENGINE v2.4 ACTIVE
+            </div>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#ecfdf5] border border-[rgba(35,122,87,0.25)] text-status-success font-mono-badge text-mono-badge">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              STRICT ZERO RAW AUDIO POLICY
+            </div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+            Enclave-isolated biometric speaker profiles, cryptographic consent chains, and mathematical feature vectors for step-up elevation.
+          </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded bg-surface border border-border-subtle font-label-md text-label-md text-on-surface hover:bg-canvas-bg hover:border-slate-300 transition-colors shadow-sm" onclick="alert('Exporting signed compliance attestation package (PDF + JSON envelope proofs)...')">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">article</span>
+<span>Compliance Attestation</span>
+<span class="font-mono-badge text-[10px] px-1 py-0.5 rounded bg-surface-container-low text-text-secondary border border-border-subtle">PDF/JSON</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded bg-[#00696d] text-white font-label-md text-label-md font-medium hover:bg-[#004f52] transition-colors shadow-sm" onclick="document.getElementById('enrollModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Enroll Authorized Speaker</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Metric Summary Cards (Top Row) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface rounded-lg p-4 border border-border-subtle flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Enrolled Speakers</span>
+<div class="w-7 h-7 rounded flex items-center justify-center bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-semibold text-on-surface">42</span>
+<span class="font-mono-badge text-mono-badge text-status-success font-medium">38 ACTIVE</span>
+</div>
+<div class="mt-2 pt-2 border-t border-border-subtle flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>3 pending re-consent</span>
+<span class="font-mono-data text-mono-data text-status-error font-medium">1 revoked</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface rounded-lg p-4 border border-border-subtle flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Biometric Vector Freshness</span>
+<div class="w-7 h-7 rounded flex items-center justify-center bg-[#ecfdf5] text-status-success">
+<span class="material-symbols-outlined text-[18px]">fingerprint</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-semibold text-on-surface">99.4%</span>
+<span class="font-mono-badge text-mono-badge px-1 py-0.2 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)]">OPTIMAL</span>
+</div>
+<div class="mt-2 pt-2 border-t border-border-subtle flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>Vector salt rotation</span>
+<span class="font-mono-data text-mono-data text-on-surface font-medium">Q1 2025 v2.4</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface rounded-lg p-4 border border-border-subtle flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Consent Audit Integrity</span>
+<div class="w-7 h-7 rounded flex items-center justify-center bg-[#f0fdfa] text-secondary">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-semibold text-on-surface">100%</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-medium">CRYPT-SIGNED</span>
+</div>
+<div class="mt-2 pt-2 border-t border-border-subtle flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>GDPR Art. 9 &amp; BIPA</span>
+<span class="font-mono-data text-mono-data text-status-success font-medium">Strict Non-Repudiable</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface rounded-lg p-4 border border-border-subtle flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">DetectifAI Eidos Sync</span>
+<div class="w-7 h-7 rounded flex items-center justify-center bg-[#f0f3ff] text-primary-container">
+<span class="material-symbols-outlined text-[18px]">sync_saved_locally</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl font-semibold text-on-surface">Healthy</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success font-medium">mTLS v1.3</span>
+</div>
+<div class="mt-2 pt-2 border-t border-border-subtle flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>Last feature synch</span>
+<span class="font-mono-data text-mono-data text-text-secondary">4m ago (Shard-04)</span>
+</div>
+</div>
+</div>
+<!-- Main Content Layout (7:5 dynamic ratio) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SECTION: High-density interactive Speaker Roster Table (7 cols on xl) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<!-- Table Control & Filter Bar -->
+<div class="bg-surface rounded-lg border border-border-subtle p-3 flex flex-col sm:flex-row items-center justify-between gap-space-sm shadow-sm">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-text-secondary">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded border border-border-subtle bg-canvas-bg font-body-sm text-body-sm text-on-surface placeholder:text-text-secondary focus:outline-none focus:border-secondary focus:bg-surface transition-all" id="speakerSearchInput" onkeyup="filterSpeakerTable()" placeholder="Filter by name, ID (spk_...), or email..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs w-full sm:w-auto justify-end flex-wrap">
+<select class="h-9 px-2.5 rounded border border-border-subtle bg-surface font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-secondary cursor-pointer" id="roleFilter" onchange="filterSpeakerTable()">
+<option value="ALL">All Departments</option>
+<option value="SecOps">SecOps</option>
+<option value="DevOps/SRE">DevOps / SRE</option>
+<option value="Treasury">Treasury</option>
+<option value="Executive">Executive</option>
+</select>
+<select class="h-9 px-2.5 rounded border border-border-subtle bg-surface font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-secondary cursor-pointer" id="statusFilter" onchange="filterSpeakerTable()">
+<option value="ALL">All Statuses</option>
+<option value="ACTIVE">Active (38)</option>
+<option value="RE_CONSENT">Pending Re-Consent (3)</option>
+<option value="REVOKED">Revoked (1)</option>
+</select>
+<button class="w-9 h-9 flex items-center justify-center rounded border border-border-subtle text-text-secondary hover:text-on-surface hover:bg-canvas-bg transition-colors" title="Refresh Roster">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Speaker Roster Table Card -->
+<div class="bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-4 py-3 border-b border-border-subtle flex items-center justify-between bg-[#f8fafc]">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Enrolled Speaker Roster</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface border border-border-subtle text-text-secondary">42 TOTAL</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-text-secondary">
+<span class="inline-block w-2 h-2 rounded-full bg-status-success"></span>
+<span>Hardware-isolated HSM Store</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="speakerTable">
+<thead>
+<tr class="bg-[#f8fafc] border-b border-border-subtle font-label-sm text-label-sm uppercase tracking-wider text-text-secondary select-none">
+<th class="py-2.5 px-4 font-semibold">Approver / Identity</th>
+<th class="py-2.5 px-3 font-semibold">Speaker ID &amp; Hash</th>
+<th class="py-2.5 px-3 font-semibold">Enrollment Stats</th>
+<th class="py-2.5 px-3 font-semibold">Consent Status</th>
+<th class="py-2.5 px-3 font-semibold">Last Used</th>
+<th class="py-2.5 px-3 font-semibold">State</th>
+<th class="py-2.5 px-3 text-right font-semibold">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-body-sm text-body-sm">
+<!-- Row 1: Sarah Jenkins (Active Selected) -->
+<tr class="speaker-row bg-[#f0fdfa]/40 hover:bg-[#f0fdfa] cursor-pointer transition-colors" onclick="selectSpeaker('sarah')">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img alt="Sarah Jenkins" class="w-8 h-8 rounded-full object-cover border border-border-subtle ring-1 ring-secondary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-status-success ring-1 ring-white"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Sarah Jenkins</span>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">SecOps Director · <span class="text-secondary font-medium">SecOps</span></span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface font-medium">spk_sarah_jenkins_01</span>
+<span class="font-mono-badge text-[10px] text-text-secondary truncate max-w-[120px]" title="sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">hash:e3b0c442...</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-mono-data text-mono-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-secondary">mic</span>
+<span>24.8s</span>
+<span class="text-[10px] text-text-secondary">(3 samples)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-success">SNR: 29.4 dB (Clean)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-medium w-fit">
+                        EXPLICIT SIGNED
+                      </span>
+<span class="font-body-sm text-[10px] text-text-secondary mt-0.5">312 days left</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface font-medium">14m ago</span>
+<span class="font-mono-badge text-[10px] text-text-secondary">env_8f92a10c</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-semibold">
+                      ACTIVE
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-on-surface hover:bg-canvas-bg" onclick="event.stopPropagation(); selectSpeaker('sarah')" title="Inspect Vector Details">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-secondary hover:bg-canvas-bg" onclick="event.stopPropagation(); alert('Issued step-up voice re-enrollment challenge to Sarah Jenkins.')" title="Trigger Re-enrollment challenge">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Marcus Vance (Active) -->
+<tr class="speaker-row hover:bg-[#f8fafc] cursor-pointer transition-colors" onclick="selectSpeaker('marcus')">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img alt="Marcus Vance" class="w-8 h-8 rounded-full object-cover border border-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-status-success ring-1 ring-white"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Marcus Vance</span>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">Principal SecOps · <span class="text-secondary font-medium">SecOps</span></span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface font-medium">spk_marcus_vance_02</span>
+<span class="font-mono-badge text-[10px] text-text-secondary truncate max-w-[120px]">hash:7d8a9b1c...</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-mono-data text-mono-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">mic</span>
+<span>32.1s</span>
+<span class="text-[10px] text-text-secondary">(4 samples)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-success">SNR: 31.0 dB (Studio)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-medium w-fit">
+                        EXPLICIT SIGNED
+                      </span>
+<span class="font-body-sm text-[10px] text-text-secondary mt-0.5">284 days left</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface font-medium">Yesterday 18:41</span>
+<span class="font-mono-badge text-[10px] text-text-secondary">env_c0199ba4</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-semibold">
+                      ACTIVE
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-on-surface hover:bg-canvas-bg" onclick="event.stopPropagation(); selectSpeaker('marcus')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-secondary hover:bg-canvas-bg" onclick="event.stopPropagation(); alert('Issued re-enrollment challenge to Marcus Vance.')">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Elena Rostova (Treasury - Re-consent Required) -->
+<tr class="speaker-row hover:bg-[#f8fafc] cursor-pointer transition-colors" onclick="selectSpeaker('elena')">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-xs border border-border-subtle">
+                          ER
+                        </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-status-warning ring-1 ring-white"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Elena Rostova</span>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">Treasury Controller · <span class="text-secondary font-medium">Treasury</span></span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface font-medium">spk_elena_rostova_09</span>
+<span class="font-mono-badge text-[10px] text-text-secondary truncate max-w-[120px]">hash:44a10c7e...</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-mono-data text-mono-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">mic</span>
+<span>19.4s</span>
+<span class="text-[10px] text-text-secondary">(2 samples)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-text-secondary">SNR: 26.2 dB (Good)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-[#fffbeb] text-status-warning border border-[rgba(165,107,24,0.25)] font-medium w-fit">
+                        EXPIRES IN 4 DAYS
+                      </span>
+<span class="font-body-sm text-[10px] text-text-secondary mt-0.5">Annual BIPA mandate</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface font-medium">3 days ago</span>
+<span class="font-mono-badge text-[10px] text-text-secondary">env_91bf204d</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-[#fffbeb] text-status-warning border border-[rgba(165,107,24,0.25)] font-semibold">
+                      RE-CONSENT PENDING
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-on-surface hover:bg-canvas-bg" onclick="event.stopPropagation(); selectSpeaker('elena')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1 rounded text-status-warning hover:bg-canvas-bg" onclick="event.stopPropagation(); alert('Dispatched non-repudiable BIPA digital consent request to Elena Rostova.')" title="Send Re-Consent Link">
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Devon Silas (DevOps / SRE - Active) -->
+<tr class="speaker-row hover:bg-[#f8fafc] cursor-pointer transition-colors" onclick="selectSpeaker('devon')">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-semibold text-xs border border-border-subtle">
+                          DS
+                        </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-status-success ring-1 ring-white"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Devon Silas</span>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">Lead SRE · <span class="text-secondary font-medium">DevOps/SRE</span></span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface font-medium">spk_devon_silas_14</span>
+<span class="font-mono-badge text-[10px] text-text-secondary truncate max-w-[120px]">hash:12c908ae...</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-mono-data text-mono-data text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">mic</span>
+<span>27.2s</span>
+<span class="text-[10px] text-text-secondary">(3 samples)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-success">SNR: 28.5 dB (Clean)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-medium w-fit">
+                        EXPLICIT SIGNED
+                      </span>
+<span class="font-body-sm text-[10px] text-text-secondary mt-0.5">188 days left</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface font-medium">2 hours ago</span>
+<span class="font-mono-badge text-[10px] text-text-secondary">env_fa770119</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-semibold">
+                      ACTIVE
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-on-surface hover:bg-canvas-bg" onclick="event.stopPropagation(); selectSpeaker('devon')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-secondary hover:bg-canvas-bg" onclick="event.stopPropagation(); alert('Issued re-enrollment challenge to Devon Silas.')">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Kenneth Croft (Former SRE - Revoked) -->
+<tr class="speaker-row hover:bg-[#f8fafc] cursor-pointer transition-colors opacity-75" onclick="selectSpeaker('kenneth')">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-canvas-bg flex items-center justify-center text-text-secondary font-semibold text-xs border border-border-subtle">
+                          KC
+                        </div>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-status-error ring-1 ring-white"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface line-through truncate">Kenneth Croft</span>
+<span class="font-body-sm text-[11px] text-text-secondary truncate">Ex-DevOps Eng · <span class="text-text-secondary font-medium">DevOps/SRE</span></span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-text-secondary line-through font-medium">spk_kenneth_croft_04</span>
+<span class="font-mono-badge text-[10px] text-status-error">PURGED_ENCLAVE</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-mono-data text-mono-data text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">mic_off</span>
+<span>0.0s (Purged)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-text-secondary">Zero-retention</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-[#fef2f2] text-status-error border border-[rgba(181,71,71,0.25)] font-medium w-fit">
+                        CONSENT REVOKED
+                      </span>
+<span class="font-body-sm text-[10px] text-text-secondary mt-0.5">Offboarding SLA met</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-text-secondary">42 days ago</span>
+<span class="font-mono-badge text-[10px] text-text-secondary">REVOKED_OP</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-[#fef2f2] text-status-error border border-[rgba(181,71,71,0.25)] font-semibold">
+                      REVOKED
+                    </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-on-surface hover:bg-canvas-bg" onclick="event.stopPropagation(); selectSpeaker('kenneth')" title="View Audit Record">
+<span class="material-symbols-outlined text-[16px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination / Status -->
+<div class="p-3 bg-[#f8fafc] border-t border-border-subtle flex items-center justify-between text-text-secondary font-body-sm text-body-sm">
+<span class="font-mono-badge text-mono-badge">SHOWING 5 OF 42 AUTHORIZED BIOMETRIC PROFILES</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface border border-border-subtle text-text-secondary hover:text-on-surface text-xs disabled:opacity-40" disabled="">Previous</button>
+<button class="px-2 py-1 rounded bg-surface border border-border-subtle text-on-surface font-medium text-xs">1</button>
+<button class="px-2 py-1 rounded bg-surface border border-border-subtle text-text-secondary hover:text-on-surface text-xs">2</button>
+<button class="px-2 py-1 rounded bg-surface border border-border-subtle text-text-secondary hover:text-on-surface text-xs">Next</button>
+</div>
+</div>
+</div>
+<!-- Sample Visual: Voice Biometric Enclave Ingestion Pipeline -->
+<div class="bg-surface rounded-lg border border-border-subtle p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between border-b border-border-subtle pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">memory</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Eidos Ephemeral Feature Pipeline (Zero Raw Audio Retention)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-success bg-[#ecfdf5] px-1.5 py-0.5 rounded border border-[rgba(35,122,87,0.25)]">HARDWARE ATTESTED</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3 py-1">
+<div class="p-2.5 rounded bg-canvas-bg border border-border-subtle flex flex-col gap-1">
+<div class="flex items-center justify-between text-text-secondary font-mono-badge text-[10px]">
+<span>01. CAPTURE</span>
+<span class="material-symbols-outlined text-[14px]">mic</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Volatile 48kHz PCM</span>
+<span class="font-body-sm text-[11px] text-text-secondary leading-snug">Session buffer in RAM only. Max window 60s.</span>
+</div>
+<div class="p-2.5 rounded bg-canvas-bg border border-border-subtle flex flex-col gap-1">
+<div class="flex items-center justify-between text-text-secondary font-mono-badge text-[10px]">
+<span>02. FEATURE EXTRACT</span>
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">512-dim Embedding</span>
+<span class="font-body-sm text-[11px] text-text-secondary leading-snug">DetectifAI Eidos strictly derives vector weights.</span>
+</div>
+<div class="p-2.5 rounded bg-[#fef2f2]/60 border border-[rgba(181,71,71,0.25)] flex flex-col gap-1">
+<div class="flex items-center justify-between text-status-error font-mono-badge text-[10px]">
+<span>03. HARD ZERO PURGE</span>
+<span class="material-symbols-outlined text-[14px]">delete_forever</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-status-error">Raw Acoustic Memory Zeroed</span>
+<span class="font-body-sm text-[11px] text-on-surface leading-snug">WAV buffer purged immediately prior to HSM write.</span>
+</div>
+<div class="p-2.5 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.25)] flex flex-col gap-1">
+<div class="flex items-center justify-between text-secondary font-mono-badge text-[10px]">
+<span>04. ENCLAVE VAULT</span>
+<span class="material-symbols-outlined text-[14px]">lock</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">HSM-Salted Vector</span>
+<span class="font-body-sm text-[11px] text-on-surface leading-snug">Non-invertible signature for math comparison only.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SECTION: Speaker Enrollment & Consent Specification Inspector (5 cols on xl) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md sticky top-20">
+<!-- Main Inspector Card -->
+<div class="bg-surface rounded-lg border border-border-subtle shadow-sm flex flex-col overflow-hidden" id="inspectorCard">
+<!-- Inspector Header -->
+<div class="p-4 border-b border-border-subtle bg-[#f8fafc] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">manage_accounts</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Speaker Profile &amp; Biometric Spec</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-[#f0fdfa] text-secondary border border-[rgba(22,124,128,0.25)]">
+              FOCUS: spk_sarah_jenkins_01
+            </span>
+</div>
+<!-- Inspector Body -->
+<div class="p-4 flex flex-col gap-space-md">
+<!-- Approver Identification Strip -->
+<div class="flex items-start justify-between p-3 rounded-lg bg-canvas-bg border border-border-subtle">
+<div class="flex items-center gap-3">
+<img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover border border-border-subtle ring-2 ring-secondary/20" id="inspectAvatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface" id="inspectName">Sarah Jenkins</span>
+<span class="font-mono-badge text-[10px] px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Tier 1 Exec</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary" id="inspectEmail">sarah.jenkins@acmeglobal.corp</span>
+<div class="flex items-center gap-1.5 mt-1 font-mono-badge text-[11px] text-text-secondary">
+<span>DEPT: <strong class="text-on-surface" id="inspectDept">SecOps</strong></span>
+<span>·</span>
+<span>TITLE: <span class="text-on-surface" id="inspectTitle">SecOps Director</span></span>
+</div>
+</div>
+</div>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-semibold" id="inspectStatusBadge">
+                ACTIVE
+              </span>
+</div>
+<!-- Authorization Scopes & Delegation Permitted -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Authorized Step-Up Scopes</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="font-mono-badge text-[11px] px-2 py-1 rounded bg-surface border border-border-subtle text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">terminal</span>
+<span>production.deploy.breakglass</span>
+</span>
+<span class="font-mono-badge text-[11px] px-2 py-1 rounded bg-surface border border-border-subtle text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">cloud</span>
+<span>aws.iam.role_elevation</span>
+</span>
+<span class="font-mono-badge text-[11px] px-2 py-1 rounded bg-surface border border-border-subtle text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">payments</span>
+<span>treasury.wire.co_sign_&gt;100k</span>
+</span>
+<span class="font-mono-badge text-[11px] px-2 py-1 rounded bg-surface border border-border-subtle text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">key</span>
+<span>hsm.root_key_ceremony</span>
+</span>
+</div>
+</div>
+<!-- Biometric Enrollment Record Specification -->
+<div class="flex flex-col gap-2 rounded-lg border border-border-subtle p-3 bg-canvas-bg">
+<div class="flex items-center justify-between border-b border-border-subtle pb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">graphic_eq</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Biometric Vector Enclave Record</span>
+</div>
+<span class="font-mono-badge text-[10px] text-text-secondary">MODEL: eidos-v2.4-strict</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-body-sm text-body-sm pt-1">
+<div>
+<span class="text-text-secondary text-xs">Acoustic Audio Spec:</span>
+<p class="font-mono-data text-mono-data text-on-surface font-medium">48.0 kHz Lossless (PCM)</p>
+</div>
+<div>
+<span class="text-text-secondary text-xs">Total Speech Duration:</span>
+<p class="font-mono-data text-mono-data text-on-surface font-medium" id="inspectDuration">24.8s (Min req: 15s)</p>
+</div>
+<div>
+<span class="text-text-secondary text-xs">Phonetic Coverage:</span>
+<p class="font-mono-data text-mono-data text-status-success font-medium">100% (Phoneme complete)</p>
+</div>
+<div>
+<span class="text-text-secondary text-xs">Signal-to-Noise (SNR):</span>
+<p class="font-mono-data text-mono-data text-status-success font-medium" id="inspectSnr">29.4 dB (Studio Grade)</p>
+</div>
+</div>
+<!-- Vector Hash -->
+<div class="mt-1 pt-2 border-t border-border-subtle flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-text-secondary text-[11px] font-mono-badge">SHA-256 HSM VECTOR DIGEST</span>
+<button class="text-xs text-secondary hover:underline flex items-center gap-0.5" onclick="navigator.clipboard.writeText('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'); alert('Copied SHA-256 Digest!')">
+<span class="material-symbols-outlined text-[13px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+<div class="p-1.5 rounded bg-surface border border-border-subtle font-mono-data text-[11px] text-on-surface break-all select-all">
+                  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                </div>
+</div>
+<!-- Zero Raw Audio Certification Callout -->
+<div class="flex items-start gap-2 p-2 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.2)] mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">verified_user</span>
+<div class="font-body-sm text-[11px] text-on-surface leading-tight">
+<strong>Zero Raw Audio Certified:</strong> The original acoustic recording was permanently destroyed immediately post feature calculation. Only irreversible 512-dim mathematical floats exist within the HSM boundary.
+                </div>
+</div>
+</div>
+<!-- Signed Consent & Legal Boundary (GDPR Art. 9 / BIPA / CCPA) -->
+<div class="flex flex-col gap-2 rounded-lg border border-border-subtle p-3 bg-canvas-bg">
+<div class="flex items-center justify-between border-b border-border-subtle pb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">draw</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Cryptographic Consent Agreement</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-success font-medium">VALID &amp; ENFORCEABLE</span>
+</div>
+<div class="flex flex-col gap-1.5 text-body-sm text-body-sm pt-1">
+<div class="flex items-center justify-between">
+<span class="text-text-secondary text-xs">Agreement Framework:</span>
+<span class="font-mono-data text-mono-data text-on-surface">GDPR Art 9.2(a) · IL BIPA 740/14</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-secondary text-xs">Employee Signed At:</span>
+<span class="font-mono-data text-mono-data text-on-surface" id="inspectConsentDate">2024-11-12 14:22:01 UTC</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-secondary text-xs">Re-Attestation Expiry:</span>
+<span class="font-mono-data text-mono-data text-secondary font-medium" id="inspectConsentExpiry">312 days remaining (Annual)</span>
+</div>
+<div class="mt-1 pt-1.5 border-t border-border-subtle flex flex-col gap-1">
+<span class="text-text-secondary text-[11px] font-mono-badge">ED25519 CONSENT SIGNATURE</span>
+<div class="p-1.5 rounded bg-surface border border-border-subtle font-mono-data text-[11px] text-text-secondary break-all">
+                    sig_ed25519_88a4f901c0b392ee712cba043818eecf901192938aef72c01994adfe4
+                  </div>
+</div>
+</div>
+</div>
+<!-- Verification History Spark -->
+<div class="flex flex-col gap-1.5 p-3 rounded-lg border border-border-subtle bg-surface">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Step-Up Liveness Verification History</span>
+<span class="font-mono-badge text-[10px] text-text-secondary">LAST 10 ELEVATIONS</span>
+</div>
+<div class="flex items-center gap-1 h-6 w-full pt-1">
+<!-- 10 blocks showing verification outcome -->
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 14m ago (Score: 0.982)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · Yesterday (Score: 0.991)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 2d ago (Score: 0.978)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 3d ago (Score: 0.985)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-warning" title="Noise Retry · 5d ago (Low SNR)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 6d ago (Score: 0.989)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 7d ago (Score: 0.994)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 9d ago (Score: 0.981)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 12d ago (Score: 0.992)"></div>
+<div class="h-4 flex-1 rounded-sm bg-status-success" title="Passed · 14d ago (Score: 0.979)"></div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-text-secondary font-mono-badge">
+<span>Mean Confidence: 98.6%</span>
+<span class="text-status-success">0 Spoof / Deepfake Flags</span>
+</div>
+</div>
+<!-- Inspector Action Drawer -->
+<div class="flex flex-col gap-2 pt-2 border-t border-border-subtle">
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 px-3 py-2 rounded bg-surface border border-border-subtle font-label-md text-label-md text-on-surface hover:bg-canvas-bg transition-colors" onclick="simulateTestVoice('Sarah Jenkins')">
+<span class="material-symbols-outlined text-[16px] text-secondary">play_circle</span>
+<span>Simulate Step-Up</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-3 py-2 rounded bg-surface border border-border-subtle font-label-md text-label-md text-on-surface hover:bg-canvas-bg transition-colors" onclick="alert('Issuing dynamic random phrase prompt to employee device for vector re-calibration.')">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">restart_alt</span>
+<span>Re-enroll Vector</span>
+</button>
+</div>
+<button class="flex items-center justify-center gap-1.5 px-3 py-2 rounded bg-surface border border-[rgba(181,71,71,0.3)] font-label-md text-label-md text-status-error hover:bg-[#fef2f2] transition-colors" onclick="revokeSpeaker()">
+<span class="material-symbols-outlined text-[16px]">person_remove</span>
+<span>Revoke Consent &amp; Hard-Purge Vector</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Architecture / Privacy Safeguard Banner -->
+<div class="bg-surface rounded-lg border border-border-subtle p-5 shadow-sm relative overflow-hidden">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 border border-border-subtle">
+<span class="material-symbols-outlined text-[24px]">security</span>
+</div>
+<div class="flex flex-col gap-1 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">C4 Architectural Boundary: Volatile Enclave vs. Mathematical Embeddings</span>
+<span class="font-mono-badge text-[10px] px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container">NON-REVERSIBLE</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              In strict compliance with ACTIONLOCK zero-trust specifications, raw acoustic audio waveforms are never written to disk, PostgreSQL databases, monitoring logs, or object storage. The Eidos feature-extraction microservice executes strictly inside AMD SEV-SNP confidential hardware enclaves. Authorization envelopes independently require WebAuthn / FIDO2 hardware passkey quorums before action permits are minted.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<a class="px-3 py-1.5 rounded border border-border-subtle bg-canvas-bg font-label-md text-label-md text-on-surface hover:bg-surface transition-colors flex items-center gap-1" href="#">
+<span>Read Architectural Whitepaper</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Enroll New Authorized Speaker (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-[#14243A]/50 backdrop-blur-sm flex items-center justify-center p-4 hidden" id="enrollModal">
+<div class="bg-surface rounded-xl border border-border-subtle shadow-xl w-full max-w-lg overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-150">
+<div class="px-5 py-4 border-b border-border-subtle bg-[#f8fafc] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">person_add</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Enroll Authorized Speaker</span>
+</div>
+<button class="p-1 rounded text-text-secondary hover:text-on-surface" onclick="document.getElementById('enrollModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-5 flex flex-col gap-4 font-body-md text-body-md">
+<div class="flex items-start gap-2 p-3 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.2)]">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">info</span>
+<div class="font-body-sm text-[12px] text-on-surface leading-tight">
+            Speaker enrollment initiates an out-of-band WebAuthn authentication handshake and issues an interactive 3-phrase phoneme calibration challenge via the ACTIONLOCK Guardian mobile/desktop client.
+          </div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Corporate Approver Identity</label>
+<input class="h-9 px-3 rounded border border-border-subtle bg-surface font-body-sm text-body-sm focus:outline-none focus:border-secondary" placeholder="e.g. Rachel Chen (rachel.chen@acmeglobal.corp)" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Department Role</label>
+<select class="h-9 px-3 rounded border border-border-subtle bg-surface font-body-sm text-body-sm focus:outline-none focus:border-secondary">
+<option>SecOps (Security Operations)</option>
+<option>DevOps / SRE</option>
+<option>Treasury &amp; Finance</option>
+<option>Executive Leadership</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Initial Tier Scope</label>
+<select class="h-9 px-3 rounded border border-border-subtle bg-surface font-body-sm text-body-sm focus:outline-none focus:border-secondary">
+<option>Tier 1 - Production Deploy</option>
+<option>Tier 2 - Sensitive Wire</option>
+<option>Tier 3 - Full Break-Glass</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-2 border-t border-border-subtle">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded text-secondary focus:ring-0 cursor-pointer" id="consentBox" type="checkbox"/>
+<label class="font-body-sm text-[12px] text-on-surface cursor-pointer" for="consentBox">
+              Enforce GDPR Art. 9 &amp; BIPA cryptographic digital signature before vector calculation.
+            </label>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="rounded text-secondary focus:ring-0 cursor-pointer" disabled="" id="rawAudioBox" type="checkbox"/>
+<label class="font-body-sm text-[12px] text-text-secondary cursor-not-allowed" for="rawAudioBox">
+              Zero Raw Audio Retention Policy (Enforced strictly at kernel level).
+            </label>
+</div>
+</div>
+</div>
+<div class="px-5 py-3 border-t border-border-subtle bg-[#f8fafc] flex items-center justify-end gap-2">
+<button class="px-3.5 py-2 rounded bg-surface border border-border-subtle font-label-md text-label-md text-on-surface hover:bg-canvas-bg transition-colors" onclick="document.getElementById('enrollModal').classList.add('hidden')">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded bg-[#00696d] font-label-md text-label-md font-medium text-white hover:bg-[#004f52] transition-colors" onclick="document.getElementById('enrollModal').classList.add('hidden'); alert('Enrollment invitation and hardware challenge dispatched to approver device.');">
+          Issue Hardware Challenge
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript for Dynamic Profile Switching, Search Filtering & Voice Simulation -->
+<script>
+    const speakerData = {
+      sarah: {
+        name: "Sarah Jenkins",
+        email: "sarah.jenkins@acmeglobal.corp",
+        dept: "SecOps",
+        title: "SecOps Director",
+        status: "ACTIVE",
+        statusClass: "bg-[#ecfdf5] text-status-success border-[rgba(35,122,87,0.25)]",
+        duration: "24.8s (Min req: 15s)",
+        snr: "29.4 dB (Studio Grade)",
+        consentDate: "2024-11-12 14:22:01 UTC",
+        consentExpiry: "312 days remaining (Annual)",
+        avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"
+      },
+      marcus: {
+        name: "Marcus Vance",
+        email: "marcus.vance@acmeglobal.corp",
+        dept: "SecOps",
+        title: "Principal SecOps Architect",
+        status: "ACTIVE",
+        statusClass: "bg-[#ecfdf5] text-status-success border-[rgba(35,122,87,0.25)]",
+        duration: "32.1s (Min req: 15s)",
+        snr: "31.0 dB (Studio Grade)",
+        consentDate: "2024-10-15 09:12:44 UTC",
+        consentExpiry: "284 days remaining (Annual)",
+        avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"
+      },
+      elena: {
+        name: "Elena Rostova",
+        email: "elena.rostova@acmeglobal.corp",
+        dept: "Treasury",
+        title: "Treasury Controller",
+        status: "RE-CONSENT PENDING",
+        statusClass: "bg-[#fffbeb] text-status-warning border-[rgba(165,107,24,0.25)]",
+        duration: "19.4s (Min req: 15s)",
+        snr: "26.2 dB (Good Quality)",
+        consentDate: "2024-01-20 16:44:02 UTC",
+        consentExpiry: "Expires in 4 days (BIPA SLA)",
+        avatar: ""
+      },
+      devon: {
+        name: "Devon Silas",
+        email: "devon.silas@acmeglobal.corp",
+        dept: "DevOps/SRE",
+        title: "Lead SRE",
+        status: "ACTIVE",
+        statusClass: "bg-[#ecfdf5] text-status-success border-[rgba(35,122,87,0.25)]",
+        duration: "27.2s (Min req: 15s)",
+        snr: "28.5 dB (Clean Audio)",
+        consentDate: "2024-07-09 11:05:32 UTC",
+        consentExpiry: "188 days remaining (Annual)",
+        avatar: ""
+      },
+      kenneth: {
+        name: "Kenneth Croft",
+        email: "kenneth.croft@acmeglobal.corp",
+        dept: "DevOps/SRE",
+        title: "Ex-DevOps Engineer",
+        status: "REVOKED",
+        statusClass: "bg-[#fef2f2] text-status-error border-[rgba(181,71,71,0.25)]",
+        duration: "0.0s (Purged Enclave)",
+        snr: "N/A (Vector Destroyed)",
+        consentDate: "2024-02-01 (Revoked 2024-11-01)",
+        consentExpiry: "Hard Revoked · Zero Stored",
+        avatar: ""
+      }
+    };
+
+    function selectSpeaker(id) {
+      const data = speakerData[id];
+      if (!data) return;
+
+      document.getElementById('inspectName').innerText = data.name;
+      document.getElementById('inspectEmail').innerText = data.email;
+      document.getElementById('inspectDept').innerText = data.dept;
+      document.getElementById('inspectTitle').innerText = data.title;
+      document.getElementById('inspectDuration').innerText = data.duration;
+      document.getElementById('inspectSnr').innerText = data.snr;
+      document.getElementById('inspectConsentDate').innerText = data.consentDate;
+      document.getElementById('inspectConsentExpiry').innerText = data.consentExpiry;
+
+      const badge = document.getElementById('inspectStatusBadge');
+      badge.innerText = data.status;
+      badge.className = `font-mono-badge text-mono-badge px-2 py-0.5 rounded border font-semibold ${data.statusClass}`;
+
+      // Highlight selected row visually
+      const rows = document.querySelectorAll('.speaker-row');
+      rows.forEach(r => r.classList.remove('bg-[#f0fdfa]/40'));
+      if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('bg-[#f0fdfa]/40');
+      }
+    }
+
+    function filterSpeakerTable() {
+      const query = document.getElementById('speakerSearchInput').value.toLowerCase();
+      const roleFilter = document.getElementById('roleFilter').value;
+      const statusFilter = document.getElementById('statusFilter').value;
+
+      const rows = document.querySelectorAll('.speaker-row');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        let matchesQuery = text.includes(query);
+        let matchesRole = (roleFilter === 'ALL') || text.includes(roleFilter.toLowerCase());
+        let matchesStatus = (statusFilter === 'ALL') || 
+          (statusFilter === 'ACTIVE' && text.includes('active')) ||
+          (statusFilter === 'RE_CONSENT' && (text.includes('re-consent') || text.includes('expires'))) ||
+          (statusFilter === 'REVOKED' && text.includes('revoked'));
+
+        if (matchesQuery && matchesRole && matchesStatus) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function simulateTestVoice(name) {
+      const testPhrases = [
+        "confirm production database replica failover to zone west",
+        "authorize terraform state release for core networking cluster",
+        "override threshold limit for treasury settlement batch",
+        "elevate incident commander session credential"
+      ];
+      const selected = testPhrases[Math.floor(Math.random() * testPhrases.length)];
+      const confirmed = confirm(
+        `[VOICE TEST HARNESS]\n\nSpeaker: ${name}\nDynamic Eidos Prompt:\n"${selected}"\n\nRun real-time vector comparison and liveness check against HSM profile?`
+      );
+      if (confirmed) {
+        setTimeout(() => {
+          alert(`[VERIFICATION RESULT]\n\nStatus: PASSED\nConfidence: 99.1%\nPhonetic Match: TRUE\nSynthetic Speech / Deepfake Score: 0.003 (PASS)\nDecisional State: AUTHORIZED for Step-Up Permit`);
+        }, 600);
+      }
+    }
+
+    function revokeSpeaker() {
+      const currentName = document.getElementById('inspectName').innerText;
+      const confirmed = confirm(
+        `CRITICAL PRIVACY SAFEGUARD\n\nAre you sure you want to permanently revoke consent and HARD-PURGE the mathematical vector for ${currentName}?\n\nThis will trigger an immediate crypto-erase command to the HSM vault partition.`
+      );
+      if (confirmed) {
+        alert(`Hardware partition command executed: Vector embedding purged from HSM. BIPA withdrawal signed to audit trail.`);
+        selectSpeaker('kenneth');
+      }
+    }
+  </script>
+</div></main></div></body></html>

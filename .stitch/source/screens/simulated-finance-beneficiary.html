@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c4c6ce", "surface-container-lowest": "#ffffff", "on-surface": "#111c2c", "on-tertiary": "#ffffff", "secondary": "#00696d", "inverse-primary": "#b4c8e9", "border-subtle": "#E2E8F0", "secondary-fixed-dim": "#7ed4d8", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#a4cbeb", "on-tertiary-fixed-variant": "#214a65", "on-background": "#111c2c", "error-container": "#ffdad6", "outline": "#74777e", "background": "#f9f9ff", "status-success": "#237A57", "tertiary-fixed": "#c9e6ff", "on-primary-container": "#7f93b2", "on-primary": "#ffffff", "surface-container-low": "#f0f3ff", "on-primary-fixed-variant": "#354863", "on-tertiary-fixed": "#001e2f", "status-error": "#B54747", "tertiary-container": "#002d45", "surface-bright": "#f9f9ff", "on-secondary": "#ffffff", "inverse-surface": "#263142", "canvas-bg": "#F5F7FA", "on-secondary-container": "#007074", "surface-tint": "#4c5f7c", "secondary-container": "#9af1f5", "on-primary-fixed": "#061c35", "on-error": "#ffffff", "surface-container-high": "#dee9ff", "primary-fixed": "#d4e3ff", "inverse-on-surface": "#ebf1ff", "tertiary": "#001826", "surface": "#FFFFFF", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004f52", "surface-variant": "#d8e3fa", "on-tertiary-container": "#6f96b4", "on-surface-variant": "#44474d", "secondary-fixed": "#9af1f5", "primary-container": "#172b45", "primary": "#01162f", "error": "#ba1a1a", "surface-container-highest": "#d8e3fa", "text-secondary": "#64748B", "sidebar-bg": "#14243A", "primary-fixed-dim": "#b4c8e9", "surface-dim": "#cfdaf1", "status-warning": "#A56B18", "on-secondary-fixed": "#002021" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "margin": "1.5rem", "space-lg": "1rem", "space-sm": "0.5rem", "space-xl": "1.5rem" }, "fontFamily": { "headline-xl": ["Inter"], "mono-badge": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "mono-data": ["JetBrains Mono"], "label-sm": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "mono-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script></head><body class="bg-canvas-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar-bg z-50 flex flex-col border-r border-[#1E385B] text-inverse-on-surface select-none"><div class="p-space-lg border-b border-[#1E385B] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ACTIONLOCK Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDJAutoi8SJpIsza-EsjijR_avsYKLxuxToxw0bjY-XHlw3ibfClBbZ_jHsarARVfbHRZRAKZ7WTN4GB1r0SO_RyY9GNgnsDW6zDIqbhvAP_0A0-8Sf9ZvcPLjX-_XX3xWOeJZLwUnU2jsmi6MYfdyQUwn1yG7DDaLEU4nv15aswynFLp9dKx6zNxJtw3a3zZZB4roubQZaH2r41qnFRmhQN2sXN0Wo4CJvhmTLrgM"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">ACTIONLOCK</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-primary-container text-primary-fixed border border-[#214a65] tracking-wider">ENTERPRISE</span></div><div class="flex items-center gap-space-xs px-2 py-1 rounded bg-[#0d1826] border border-[#1e385b] w-fit"><span class="h-1.5 w-1.5 rounded-full bg-status-warning animate-pulse"></span><span class="font-mono-badge text-mono-badge text-text-secondary">DEMO ENV · FIXTURES</span></div></div><div class="flex-1 overflow-y-auto py-space-sm px-space-sm"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-white border-l-2 border-secondary font-medium"><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="overview-dashboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">dashboard</span><span class="font-label-md text-label-md">Overview</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="action-inbox" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">inbox</span><span class="font-label-md text-label-md">Action Inbox</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.2 rounded bg-error/20 text-error-container border border-error/30">3 pending</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="new-protected-action" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">add_moderator</span><span class="font-label-md text-label-md">New Protected Action</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="approvals-step-up" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">verified_user</span><span class="font-label-md text-label-md">Approvals &amp; Step-Up</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="voice-registry" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">record_voice_over</span><span class="font-label-md text-label-md">Voice Registry</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="security-policies" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">policy</span><span class="font-label-md text-label-md">Security Policies</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="integrations" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">integration_instructions</span><span class="font-label-md text-label-md">Integrations</span></div><span class="font-mono-badge text-mono-badge text-text-secondary opacity-75">3 LIVE</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="webhook-monitor" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">webhook</span><span class="font-label-md text-label-md">Webhook Monitor</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="audit-trail" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">receipt_long</span><span class="font-label-md text-label-md">Audit Trail</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="security-incidents" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">fitbit_push_ups</span><span class="font-label-md text-label-md">Security Incidents</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="break-glass-recovery" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-error">emergency_home</span><span class="font-label-md text-label-md text-error-container">Break-Glass Recovery</span></div></a></nav></div><div class="p-space-md border-t border-[#1E385B] bg-[#0d1826]"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-[#1e385b]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/><span class="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-status-success ring-1 ring-[#0d1826]"></span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md font-medium text-white truncate max-w-[90px]">Marcus Vance</span><span class="font-mono-badge text-[9px] uppercase px-1 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Owner</span></div><span class="font-body-sm text-[11px] text-text-secondary truncate max-w-[130px]">Principal SecOps</span></div></div><button class="text-text-secondary hover:text-white transition-colors p-1"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface border-b border-border-subtle z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">shield</span><span>Gateway</span><span class="text-outline-variant">/</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-border-subtle text-on-surface cursor-pointer hover:bg-surface-container transition-colors"><span class="font-medium">Acme Global Infrastructure</span><span class="font-mono-badge text-mono-badge text-text-secondary">(US-East)</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div></div><div class="relative w-80"><div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"><span class="material-symbols-outlined text-[18px] text-text-secondary">search</span></div><input class="w-full h-9 pl-8 pr-12 rounded border border-border-subtle bg-canvas-bg font-body-sm text-body-sm text-on-surface placeholder:text-text-secondary focus:outline-none focus:border-secondary focus:bg-surface transition-all" placeholder="Search Action ID, Commit SHA, Envelope..." type="text"/><div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none"><kbd class="font-mono-badge text-[10px] px-1.5 py-0.5 bg-surface rounded border border-border-subtle text-text-secondary shadow-sm">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#ecfdf5] border border-[rgba(35,122,87,0.25)] text-status-success font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-status-success"></span>API GATEWAY: OPERATIONAL</div><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.25)] text-secondary font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>DETECTIFAI: HEALTHY</div></div><div class="h-4 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Documentation"><span class="material-symbols-outlined text-[20px]">menu_book</span></button><button class="relative w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Alerts"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-error"></span></button><a class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#fef2f2] border border-[rgba(181,71,71,0.25)] text-status-error hover:bg-error hover:text-white transition-all font-mono-badge text-mono-badge" data-path="break-glass-recovery" href="#"><span class="material-symbols-outlined text-[16px]">warning</span><span>BREAK-GLASS</span></a></div><div class="h-8 w-px bg-border-subtle"></div><div class="flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-border-subtle cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/></div></div></header><main class="w-full pt-16 min-h-screen bg-canvas-bg"><div class="flex flex-col w-full">
+<!-- Interactive Notification Toast Container -->
+<div class="fixed top-20 right-6 z-50 transform translate-y-[-120%] opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="flex items-center gap-space-md p-space-md bg-inverse-surface text-inverse-on-surface rounded-lg shadow-xl border border-[#1e385b] min-w-[340px]">
+<span class="material-symbols-outlined text-secondary-container" id="toastIcon">info</span>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-label-md font-semibold text-white" id="toastTitle">System Notice</span>
+<span class="font-body-sm text-outline-variant truncate" id="toastMessage">Operational task updated.</span>
+</div>
+<button class="ml-auto text-outline-variant hover:text-white p-1" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Mandatory Sandbox & Architectural Boundaries Notice -->
+<div class="w-full bg-[#fefce8] border-b border-[#fde047]/60 px-space-xl py-2 flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm text-status-warning">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+<span class="font-mono-badge text-mono-badge tracking-wider font-semibold">DEMO &amp; SIMULATION ENVIRONMENT</span>
+<span class="text-text-secondary text-body-sm hidden md:inline">— No real capital is transmitted or real SWIFT/banking credentials exposed. Complies strictly with ACTIONLOCK C4 Architectural Enclave Boundaries.</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-white text-text-secondary border border-border-subtle shadow-sm">ENCLAVE: JCS-RFC8785-STRICT</span>
+<div class="flex items-center gap-1 text-text-secondary font-mono-badge text-[10px]">
+<span class="h-1.5 w-1.5 rounded-full bg-status-success"></span> ZERO-LEAK AIRGAP PASS
+      </div>
+</div>
+</div>
+<!-- Top Context Header & Drift Beacon Banner -->
+<div class="w-full bg-surface border-b border-border-subtle px-space-xl py-space-md">
+<!-- Breadcrumbs & Trace Route -->
+<div class="flex flex-wrap items-center justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+<span>Action Inbox</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span>Financial Operations</span>
+<span class="text-outline-variant">/</span>
+<span>ERP Treasury Direct</span>
+<span class="text-outline-variant">/</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold bg-surface-container-low px-1.5 py-0.5 rounded">env_fin_982410_wire</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-text-secondary">Egress Gate:</span>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 bg-surface-container-low text-on-surface rounded border border-border-subtle">SAP S/4HANA · SWIFT MT103 GW-04</span>
+<span class="h-2 w-2 rounded-full bg-status-error animate-ping"></span>
+</div>
+</div>
+<!-- Title & Status Badges -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-[#fef2f2] border border-[#fecaca] text-status-error flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">High-Consequence Treasury Authorization: Vendor Beneficiary Change</h1>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-[#fffbeb] text-status-warning border border-[#fde68a] flex items-center gap-1.5">
+<span class="h-2 w-2 rounded-full bg-status-warning animate-pulse"></span>
+              ON_HOLD — BENEFICIARY_HASH_MISMATCH
+            </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Wire batch #WB-2025-04191 • Destination routing altered post-invoice approval by unauthorized delta injection.</p>
+</div>
+</div>
+<!-- Quick Metrics Header Pill -->
+<div class="flex items-center gap-space-lg bg-surface-container-low p-2 rounded-lg border border-border-subtle shrink-0">
+<div class="px-space-sm">
+<div class="font-mono-badge text-[10px] text-text-secondary uppercase">Exposure Value</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">$420,000.00 <span class="font-mono-badge text-xs text-text-secondary font-normal">USD</span></div>
+</div>
+<div class="h-8 w-px bg-border-subtle"></div>
+<div class="px-space-sm">
+<div class="font-mono-badge text-[10px] text-text-secondary uppercase">Quorum Gate</div>
+<div class="font-label-md text-label-md text-status-warning font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">groups</span> Tier 1 (1 / 2 Signed)
+          </div>
+</div>
+</div>
+</div>
+<!-- Critical Security Callout Banner -->
+<div class="mt-space-sm p-space-md bg-[#fff1f2] border border-[#fecdd3] rounded-lg flex items-start gap-space-md">
+<span class="material-symbols-outlined text-status-error text-[20px] mt-0.5 shrink-0">shield_with_heart</span>
+<div class="flex-1 text-on-surface">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-label-md font-bold text-status-error uppercase tracking-wider">CRITICAL SECURITY INTERCEPTION: ACTION ENVELOPE CORRUPTED</span>
+<span class="font-mono-badge text-[10px] bg-status-error text-white px-1.5 py-0.2 rounded font-mono">SEV-1 HOLD</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#881337] mt-1 leading-relaxed">
+<strong>BENEFICIARY ACCOUNT MODIFIED POST-ISSUANCE.</strong> Cryptographic envelope digest drifted from canonical ingress snapshot. Pre-existing voice approvals and automated ERP routing have been quarantined. Dual-person quorum and fresh nonced audio challenge are enforced before a scoped execution permit can be signed into the hardware HSM enclave.
+        </p>
+</div>
+<button class="shrink-0 px-2.5 py-1 text-xs font-mono-badge text-status-error hover:bg-[#ffe4e6] rounded border border-[#fda4af] transition-colors flex items-center gap-1" onclick="inspectRawJcs()">
+<span class="material-symbols-outlined text-[14px]">terminal</span> Raw JCS Diff
+      </button>
+</div>
+</div>
+<!-- Primary Workspace Canvas (2-Column Architecture) -->
+<div class="w-full px-space-xl py-space-lg flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- ========================================================================= -->
+<!-- LEFT COLUMN: Immutable Action Envelope & Drift Comparison (7 Cols)        -->
+<!-- ========================================================================= -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Card 1: Envelope Identity & Cryptographic Hash Tracker -->
+<div class="bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-space-lg py-space-md border-b border-border-subtle bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">fingerprint</span>
+<span class="font-headline-sm text-label-md font-semibold text-primary">Cryptographic Action Envelope Digest</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-text-secondary">SPEC: JCS_RFC8785 + SHA256</span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Hashes Diff Strip -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md bg-[#f8fafc] rounded border border-border-subtle flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Ingress Hash (Original Sign-off)</span>
+<span class="font-mono-badge text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-text-secondary border border-border-subtle">INVALIDATED</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface select-all break-all text-xs font-semibold">
+                  sha256:4a88c710d29f8a31885cc90b8f...4e19
+                </div>
+<div class="font-body-sm text-[11px] text-text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[13px] text-status-success">check_circle</span>
+                  Locked 2025-04-19 14:12:04 UTC by ERP Dispatcher
+                </div>
+</div>
+<div class="p-space-md bg-[#fff1f2] rounded border border-[#fecdd3] flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-error uppercase font-semibold">Current State Hash (Drifted)</span>
+<span class="font-mono-badge text-[10px] px-1.5 py-0.2 rounded bg-[#fee2e2] text-status-error font-bold border border-[#fca5a5]">DRIFT DETECTED</span>
+</div>
+<div class="font-mono-data text-mono-data text-status-error select-all break-all text-xs font-semibold">
+                  sha256:7f8a9e44bc0192e4726ef91a92...3a88
+                </div>
+<div class="font-body-sm text-[11px] text-status-error flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[13px]">emergency</span>
+                  Altered in flight via external API patch #P-882
+                </div>
+</div>
+</div>
+<!-- Context Attributes Grid -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs text-body-sm border-t border-border-subtle">
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary block">Canonical Action ID</span>
+<span class="font-mono-data text-mono-data text-on-surface font-medium">env_fin_982410_wire</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary block">Requisitioner</span>
+<span class="font-body-sm text-on-surface font-medium truncate block">Dan Sullivan (Finance Ops)</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary block">Target Clearance Gate</span>
+<span class="font-body-sm text-on-surface font-medium">SWIFT Fedwire MT103</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Beneficiary Diff & Hash Drift Inspector (Visual Side-by-Side) -->
+<div class="bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-space-lg py-space-md border-b border-border-subtle bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">compare_arrows</span>
+<span class="font-headline-sm text-label-md font-semibold text-primary">Side-by-Side Beneficiary Mutation Diff</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-error/10 text-status-error border border-error/20 font-bold">1 FIELD TAMPERED</span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Visual Diff Table -->
+<div class="border border-border-subtle rounded-lg overflow-hidden">
+<div class="grid grid-cols-12 bg-surface-container-low border-b border-border-subtle text-text-secondary font-label-sm text-label-sm font-semibold uppercase py-2 px-space-md">
+<div class="col-span-3">Envelope Attribute</div>
+<div class="col-span-4">Original Stored Vendor Profile</div>
+<div class="col-span-5 text-status-error flex items-center gap-1">
+<span>Mutated In-Flight Target</span>
+<span class="material-symbols-outlined text-[14px]">warning</span>
+</div>
+</div>
+<!-- Row 1: Legal Entity -->
+<div class="grid grid-cols-12 border-b border-border-subtle py-2.5 px-space-md items-center text-body-sm hover:bg-surface-container-low/30 transition-colors">
+<div class="col-span-3 font-medium text-text-secondary">Beneficiary Entity</div>
+<div class="col-span-4 text-on-surface">Meridian Cloud Infrastructure Ltd</div>
+<div class="col-span-5 text-status-error font-medium bg-[#fef2f2]/60 px-2 py-1 rounded border border-[#fecaca]">
+                  Meridian Global Offshore Holdings (Cyprus) Ltd
+                </div>
+</div>
+<!-- Row 2: Destination Financial Institution -->
+<div class="grid grid-cols-12 border-b border-border-subtle py-2.5 px-space-md items-center text-body-sm hover:bg-surface-container-low/30 transition-colors">
+<div class="col-span-3 font-medium text-text-secondary">Depository Bank</div>
+<div class="col-span-4 text-on-surface">JPMorgan Chase NY · USA</div>
+<div class="col-span-5 text-status-error font-medium bg-[#fef2f2]/60 px-2 py-1 rounded border border-[#fecaca]">
+                  EuroClear Bank · Limassol, Cyprus
+                </div>
+</div>
+<!-- Row 3: Account Identifier / Routing -->
+<div class="grid grid-cols-12 border-b border-border-subtle py-2.5 px-space-md items-center text-body-sm hover:bg-surface-container-low/30 transition-colors">
+<div class="col-span-3 font-medium text-text-secondary">Account Number / IBAN</div>
+<div class="col-span-4 font-mono-data text-xs text-on-surface">
+                  ABA: 021000021 · Acct: ****8841
+                </div>
+<div class="col-span-5 font-mono-data text-xs text-status-error bg-[#fef2f2]/60 px-2 py-1 rounded border border-[#fecaca] font-bold">
+                  IBAN: CY29 0020 0128 0000 0002 9102
+                </div>
+</div>
+<!-- Row 4: Invoice Alignment -->
+<div class="grid grid-cols-12 border-b border-border-subtle py-2.5 px-space-md items-center text-body-sm hover:bg-surface-container-low/30 transition-colors">
+<div class="col-span-3 font-medium text-text-secondary">Invoice Reference</div>
+<div class="col-span-4 font-mono-data text-xs text-on-surface">INV-2025-CLOUD-9021</div>
+<div class="col-span-5 font-mono-data text-xs text-on-surface flex items-center justify-between">
+<span>INV-2025-CLOUD-9021</span>
+<span class="font-mono-badge text-[10px] text-status-success bg-status-success/10 px-1 rounded">MATCH</span>
+</div>
+</div>
+<!-- Row 5: Remittance Amount -->
+<div class="grid grid-cols-12 py-2.5 px-space-md items-center text-body-sm bg-surface-container-low/20">
+<div class="col-span-3 font-medium text-text-secondary">Net Authorized Sum</div>
+<div class="col-span-4 font-headline-sm text-body-lg text-primary font-bold">$420,000.00 USD</div>
+<div class="col-span-5 font-headline-sm text-body-lg text-primary font-bold flex items-center justify-between">
+<span>$420,000.00 USD</span>
+<span class="font-mono-badge text-[10px] text-status-warning bg-[#fffbeb] px-1.5 py-0.5 rounded border border-[#fde68a]">EXCEEDS $100K QUORUM TIER</span>
+</div>
+</div>
+</div>
+<!-- Risk Intelligence Telemetry Box -->
+<div class="p-space-md bg-canvas-bg rounded border border-border-subtle space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-status-error">flag</span>
+                  Risk Engine Heuristics &amp; Sanctions Screen
+                </span>
+<span class="font-mono-badge text-mono-badge text-status-error font-bold">RISK SCORE: 88 / 100</span>
+</div>
+<p class="font-body-sm text-text-secondary leading-normal">
+                Destination entity <code class="font-mono-data text-xs bg-surface px-1 py-0.5 rounded border border-border-subtle text-primary">Meridian Global Offshore Holdings (Cyprus)</code> is not on approved global master vendor records. Destination jurisdiction (Cyprus) diverges from registered corporate domicile (Delaware, USA).
+              </p>
+</div>
+</div>
+</div>
+<!-- Card 3: Execution Pathway & Canonical Replay Prevention -->
+<div class="bg-surface rounded-lg border border-border-subtle p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md font-semibold text-primary">Target State Resolution Options</span>
+<span class="font-mono-badge text-mono-badge text-text-secondary">ARBITRATION PROTOCOL</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<label class="relative flex items-start gap-space-sm p-space-md rounded border border-border-subtle bg-surface-container-low/40 cursor-pointer hover:border-text-secondary transition-all">
+<input checked="" class="mt-1 text-secondary focus:ring-secondary h-4 w-4" name="arbitrationPath" onchange="toggleArbitration(this.value)" type="radio" value="revert"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-primary">Revert to Stored Domestic Beneficiary</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5">Discards mutated Cyprus account. Executes $420k to JPMorgan Chase NYC vendor vault. Keeps normal approvals.</span>
+<span class="font-mono-badge text-[10px] text-status-success mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> RECOMMENDED BY POLICY SEC-409
+                </span>
+</div>
+</label>
+<label class="relative flex items-start gap-space-sm p-space-md rounded border border-status-warning/40 bg-[#fffbeb]/20 cursor-pointer hover:border-status-warning transition-all">
+<input class="mt-1 text-status-warning focus:ring-status-warning h-4 w-4" name="arbitrationPath" onchange="toggleArbitration(this.value)" type="radio" value="override"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-status-warning">Approve Mutated Beneficiary Change</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5">Authorizes EuroClear Cyprus offshore delivery. Demands strict dual-voice attestation + 2x physical FIDO2 passkeys.</span>
+<span class="font-mono-badge text-[10px] text-status-error mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">report</span> ELEVATED AUDIT TRAIL LOGGED
+                </span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- RIGHT COLUMN: Multi-Stage Step-Up & Dual AI Verification Studio (5 Cols)   -->
+<!-- ========================================================================= -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Card 1: Dynamic Ephemeral Voice Challenge & Audio Studio -->
+<div class="bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-space-lg py-space-md border-b border-border-subtle bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">record_voice_over</span>
+<span class="font-headline-sm text-label-md font-semibold text-primary">Ephemeral Voice Challenge Attestation</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold">NONCE #WIRE-839-902</span>
+</div>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Nonce Statement Script -->
+<div class="p-space-md bg-canvas-bg rounded border border-border-subtle flex flex-col gap-1">
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm">
+<span>STRICT SPOKEN CHALLENGE PHRASE</span>
+<span class="font-mono-badge text-[10px] text-secondary font-semibold">VALIDITY: 04:18 REMAINING</span>
+</div>
+<blockquote class="font-body-md text-on-surface italic font-medium pt-1 border-l-2 border-secondary pl-3 my-1">
+                “I, Elena Rostova, verify beneficiary change for Meridian Cloud invoice 9021 in the amount of four hundred twenty thousand dollars to account ending nine-one-zero-two with nonce wire-839.”
+              </blockquote>
+<span class="font-mono-badge text-[10px] text-text-secondary">Phrase generated dynamically • Nonce invalidates replay attacks across all channels.</span>
+</div>
+<!-- Waveform & Playback Audio Console -->
+<div class="p-space-md bg-primary rounded-lg text-white flex flex-col gap-space-md shadow-inner">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<button class="w-9 h-9 rounded-full bg-secondary text-white flex items-center justify-center hover:bg-secondary/90 transition-transform active:scale-95 shadow" id="audioPlayBtn" onclick="toggleAudioSimulation()">
+<span class="material-symbols-outlined text-[20px]" id="audioPlayIcon">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold">Elena_Rostova_WireNonce_839.wav</span>
+<span class="font-mono-badge text-[10px] text-outline-variant">48kHz Lossless PCM · 18.4s / 30.0s Analyzed</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-badge text-xs text-secondary-container font-bold" id="timerDisplay">00:18.4</span>
+</div>
+</div>
+<!-- Animated SVG Waveform Visualizer -->
+<div class="w-full bg-[#0d1826] p-2.5 rounded border border-[#1e385b] flex flex-col gap-1.5">
+<svg class="w-full h-12 text-secondary" fill="none" id="waveformSvg" preserveaspectratio="none" viewbox="0 0 500 50">
+<path d="M0,25 Q10,5 20,25 T40,25 T60,8 T80,42 T100,25 T120,2 T140,48 T160,25 T180,10 T200,40 T220,25 T240,4 T260,46 T280,25 T300,12 T320,38 T340,25 T360,6 T380,44 T400,25 T420,15 T440,35 T460,25 T480,20 T500,25" id="waveformPath" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path>
+</svg>
+<div class="flex justify-between text-outline-variant font-mono-badge text-[9px]">
+<span>0.00s</span>
+<span class="text-secondary-fixed">SPECTRAL CONTINUITY: 99.4%</span>
+<span>18.42s</span>
+</div>
+</div>
+<!-- Re-Record or Simulate Buttons -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-mono-badge text-[10px] text-status-success flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-status-success"></span> INGESTION COMPLETE
+                </span>
+<button class="px-2.5 py-1 text-xs font-label-md text-outline-variant hover:text-white rounded border border-[#1e385b] hover:bg-[#1e385b] transition-colors flex items-center gap-1" onclick="simulateReRecord()">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Re-prompt Elena
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: DetectifAI Dual-Engine Evidence Bus (Aletheia & Eidos) -->
+<div class="bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-space-lg py-space-md border-b border-border-subtle bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">auto_fix_high</span>
+<span class="font-headline-sm text-label-md font-semibold text-primary">DetectifAI Dual-Engine Biometric Bus</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-semibold">ENCLAVE SECURED</span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Engine 1: Aletheia Synthetic / Anti-Spoof -->
+<div class="p-space-md rounded-lg border border-border-subtle bg-canvas-bg space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-status-success">verified_user</span>
+<span class="font-headline-sm text-body-md font-semibold text-primary">Detector 01 · Aletheia Synthetic Engine</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-[#ecfdf5] text-status-success border border-[rgba(35,122,87,0.25)] font-bold">
+                  VERDICT: REAL
+                </span>
+</div>
+<!-- Bar gauge -->
+<div class="space-y-1">
+<div class="flex justify-between text-body-sm font-mono-badge text-[11px] text-text-secondary">
+<span>Synthetic Deepfake Probability:</span>
+<span class="font-semibold text-status-success">0.02 (ULTRA LOW RISK)</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden flex">
+<div class="bg-status-success h-full transition-all duration-500" style="width: 2.4%;"></div>
+<div class="bg-surface-container flex-1"></div>
+</div>
+</div>
+<div class="text-[11px] font-body-sm text-text-secondary flex items-center justify-between">
+<span>Phase Vocoder &amp; Artifact Inspection: CLEAN</span>
+<span>Threshold: &lt; 0.15</span>
+</div>
+</div>
+<!-- Engine 2: Eidos Speaker Verification -->
+<div class="p-space-md rounded-lg border border-border-subtle bg-canvas-bg space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">psychology</span>
+<span class="font-headline-sm text-body-md font-semibold text-primary">Detector 02 · Eidos Speaker Verification</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-[#f0fdfa] text-secondary border border-[rgba(22,124,128,0.25)] font-bold">
+                  MATCH CONFIRMED
+                </span>
+</div>
+<!-- Biometric Match Details -->
+<div class="grid grid-cols-2 gap-space-sm pt-1 text-xs">
+<div class="p-2 rounded bg-surface border border-border-subtle">
+<span class="font-label-sm text-[10px] text-text-secondary uppercase block">Enrolled Vector Target</span>
+<span class="font-mono-data text-on-surface font-semibold">spk_elena_rostova_09</span>
+</div>
+<div class="p-2 rounded bg-surface border border-border-subtle">
+<span class="font-label-sm text-[10px] text-text-secondary uppercase block">Cosine Similarity Score</span>
+<span class="font-mono-data text-secondary font-bold">0.964 (Min Req: 0.850)</span>
+</div>
+</div>
+<p class="font-body-sm text-[11px] text-text-secondary">
+                Enclave zero-knowledge guarantee: Voice biometric evaluation was performed inside AWS Nitro Enclave; zero raw audio buffers or spectral embeddings are permanently stored.
+              </p>
+</div>
+<!-- Mandatory Architectural Warning Callout -->
+<div class="p-space-sm rounded bg-surface-container-low border border-border-subtle flex items-start gap-space-sm text-[11px] text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">policy</span>
+<span>
+<strong>ACTIONLOCK Boundary Architecture:</strong> AI voice checks provide passive corroborative anti-spoof evidence only. Under zero-trust charter SEC-88, DetectifAI does not independently authorize funds egress without human quorum and FIDO2 passkeys.
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 3: Peer Quorum & Hardware Passkey Step-Up -->
+<div class="bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-space-lg py-space-md border-b border-border-subtle bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">vpn_key</span>
+<span class="font-headline-sm text-label-md font-semibold text-primary">Executive Quorum &amp; Passkey Step-Up</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-status-warning font-semibold">1 OF 2 READY</span>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- Approver 1: Elena Rostova -->
+<div class="flex items-center justify-between p-space-sm rounded border border-border-subtle bg-surface-container-low/30">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-secondary text-white font-semibold flex items-center justify-center text-xs">
+                    ER
+                  </div>
+<span class="absolute -bottom-1 -right-1 h-3.5 w-3.5 rounded-full bg-status-success border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[9px] text-white">check</span>
+</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-primary">Elena Rostova</div>
+<div class="font-body-sm text-[11px] text-text-secondary">Treasury Controller · Primary Signer</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-status-success/10 text-status-success font-semibold border border-status-success/20">VOICE PASSED</span>
+<span class="block font-mono-badge text-[10px] text-text-secondary mt-0.5">FIDO2 Touch Pending</span>
+</div>
+</div>
+<!-- Approver 2: Marcus Vance (Current User) -->
+<div class="flex items-center justify-between p-space-sm rounded border border-secondary/40 bg-secondary/5">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img alt="Marcus Vance" class="w-8 h-8 rounded-full object-cover border border-secondary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/>
+<span class="absolute -bottom-1 -right-1 h-3.5 w-3.5 rounded-full bg-status-warning border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[9px] text-white">pending</span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-primary">Marcus Vance</span>
+<span class="font-mono-badge text-[9px] px-1 bg-secondary-container text-on-secondary-container rounded">YOU</span>
+</div>
+<div class="font-body-sm text-[11px] text-text-secondary">SecOps Principal · Designated Co-Signer</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono-badge text-[10px] px-1.5 py-0.5 rounded bg-status-warning/10 text-status-warning font-semibold border border-status-warning/20">AWAITING CO-SIGN</span>
+<span class="block font-mono-badge text-[10px] text-secondary mt-0.5 font-medium">YubiKey 5C Ready</span>
+</div>
+</div>
+<!-- Passkey Trigger Module Box -->
+<div class="p-space-md rounded-lg border border-dashed border-border-subtle bg-canvas-bg text-center flex flex-col items-center gap-space-xs" id="passkeyTriggerBox">
+<span class="material-symbols-outlined text-[28px] text-secondary">security</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Hardware Security Key Verification (FIDO2)</span>
+<p class="font-body-sm text-text-secondary text-xs max-w-xs">
+                To issue the cryptographic authorization envelope, plug in and touch your registered WebAuthn security key.
+              </p>
+<button class="mt-1 px-4 py-2 bg-primary hover:bg-[#172b45] text-white rounded text-xs font-label-md font-semibold transition-all flex items-center gap-2 shadow-sm" id="webauthnBtn" onclick="triggerWebAuthn()">
+<span class="material-symbols-outlined text-[16px]">touch_app</span> Touch Security Key to Sign
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Incident & Envelope Ledger (Multi-Tab Technical Explorer) -->
+<div class="mt-space-lg bg-surface rounded-lg border border-border-subtle overflow-hidden shadow-sm">
+<div class="px-space-lg py-space-sm border-b border-border-subtle bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-sm text-label-md font-bold text-primary uppercase tracking-wide">Envelope Arbitration Audit Ledger</span>
+<div class="flex items-center border border-border-subtle rounded bg-surface p-0.5 text-xs font-label-sm">
+<button class="px-2.5 py-1 rounded bg-secondary text-white font-medium">Timeline (Events)</button>
+<button class="px-2.5 py-1 rounded text-text-secondary hover:text-on-surface" onclick="triggerToast('Viewing Raw JCS RFC-8785 canonical JSON view')">JCS JSON</button>
+<button class="px-2.5 py-1 rounded text-text-secondary hover:text-on-surface" onclick="triggerToast('Viewing Policy Rule SEC-409 AST')">Policy AST</button>
+</div>
+</div>
+<span class="font-mono-badge text-mono-badge text-text-secondary">CHRONOLOGICAL AUDIT CHAIN (IMMUTABLE)</span>
+</div>
+<div class="divide-y divide-border-subtle font-body-sm text-xs">
+<!-- Log 1 -->
+<div class="p-space-md flex items-start gap-space-md hover:bg-surface-container-low/20 transition-colors">
+<span class="font-mono-data text-text-secondary shrink-0 pt-0.5">14:18:22 UTC</span>
+<span class="material-symbols-outlined text-[16px] text-status-warning shrink-0 mt-0.5">lock_clock</span>
+<div class="flex-1">
+<span class="font-semibold text-primary">Envelope Lock Triggered:</span>
+<span class="text-text-secondary">Drift evaluation halted transmission. Hash changed from <code>sha256:4a88c...</code> to <code>sha256:7f8a9...</code>. Dual-approver lock initialized.</span>
+</div>
+<span class="font-mono-badge text-[10px] bg-status-warning/10 text-status-warning px-1.5 py-0.5 rounded font-mono">HOLD_ASSERTED</span>
+</div>
+<!-- Log 2 -->
+<div class="p-space-md flex items-start gap-space-md hover:bg-surface-container-low/20 transition-colors">
+<span class="font-mono-data text-text-secondary shrink-0 pt-0.5">14:17:01 UTC</span>
+<span class="material-symbols-outlined text-[16px] text-status-success shrink-0 mt-0.5">graphic_eq</span>
+<div class="flex-1">
+<span class="font-semibold text-primary">DetectifAI Dual Pipeline Execution:</span>
+<span class="text-text-secondary">Aletheia evaluated 18.4s lossless PCM audio. Synthetics risk evaluated at 0.02. Eidos verified speaker signature against voice model #spk_elena_rostova_09.</span>
+</div>
+<span class="font-mono-badge text-[10px] bg-status-success/10 text-status-success px-1.5 py-0.5 rounded font-mono">BIOMETRIC_PASS</span>
+</div>
+<!-- Log 3 -->
+<div class="p-space-md flex items-start gap-space-md hover:bg-surface-container-low/20 transition-colors">
+<span class="font-mono-data text-text-secondary shrink-0 pt-0.5">14:12:04 UTC</span>
+<span class="material-symbols-outlined text-[16px] text-text-secondary shrink-0 mt-0.5">receipt</span>
+<div class="flex-1">
+<span class="font-semibold text-primary">Initial Treasury Ingress Requisition:</span>
+<span class="text-text-secondary">Requisitioner Dan Sullivan submitted $420,000.00 USD payment to Meridian Cloud Infrastructure Ltd (JPMorgan Chase NY). Envelope initialized.</span>
+</div>
+<span class="font-mono-badge text-[10px] bg-surface-container text-text-secondary px-1.5 py-0.5 rounded font-mono">INGRESS_ORIGIN</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sticky/Fixed Action Bar & Decision Controls -->
+<div class="sticky bottom-0 left-0 right-0 bg-surface/95 backdrop-blur border-t border-border-subtle z-30 px-space-xl py-space-md shadow-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Left: Deterministic State -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-status-error animate-pulse"></span>
+<span class="font-mono-badge text-mono-badge text-status-error font-bold uppercase tracking-wider">FAIL-CLOSED ENFORCEMENT</span>
+</div>
+<div class="h-4 w-px bg-border-subtle hidden sm:block"></div>
+<span class="font-body-sm text-xs text-text-secondary hidden lg:inline">
+          Envelope hold prevents SAP ERP direct disbursement. Release requires explicit co-signing arbitration.
+        </span>
+</div>
+<!-- Right: Action Buttons Hierarchy -->
+<div class="flex items-center gap-space-sm flex-wrap justify-end w-full md:w-auto">
+<!-- Secondary Destructive: Quarantine -->
+<button class="px-3.5 py-2 bg-surface hover:bg-[#fef2f2] text-status-error border border-[#fecaca] rounded font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm" onclick="handleQuarantineFraud()">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span>Quarantine &amp; Flag Fraud</span>
+</button>
+<!-- Neutral: Reject Beneficiary Drift & Revert -->
+<button class="px-3.5 py-2 bg-surface hover:bg-surface-container-low text-primary border border-border-subtle rounded font-label-md text-label-md font-medium transition-all flex items-center gap-1.5 shadow-sm" id="btnRevert" onclick="handleRevertBeneficiary()">
+<span class="material-symbols-outlined text-[16px]">undo</span>
+<span>Revert to Domestic Beneficiary</span>
+</button>
+<!-- Primary: Authorize and Co-Sign -->
+<button class="px-4 py-2 bg-secondary hover:bg-[#004f52] text-white rounded font-label-md text-label-md font-semibold transition-all flex items-center gap-2 shadow hover:shadow-md" id="btnAuthorize" onclick="handleAuthorizeAction()">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span id="authorizeBtnText">Authorize &amp; Sign Execution Permit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Raw Canonical JCS Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-[#14243A]/50 backdrop-blur-sm hidden items-center justify-center p-4" id="jcsModal">
+<div class="bg-surface rounded-xl border border-border-subtle max-w-2xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[870px]">
+<div class="px-space-lg py-space-md border-b border-border-subtle bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">code</span>
+<span class="font-headline-sm text-label-md font-semibold text-primary">Canonical JSON Envelope (JCS RFC-8785)</span>
+</div>
+<button class="text-text-secondary hover:text-primary p-1" onclick="closeRawJcs()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg overflow-y-auto bg-[#0d1826] text-white font-mono-data text-xs leading-relaxed">
+<pre class="text-[#a4cbeb]">{
+  <span class="text-white">"@context"</span>: <span class="text-secondary-fixed">"https://schema.actionlock.io/v2/financial-wire.json"</span>,
+  <span class="text-white">"action_id"</span>: <span class="text-secondary-fixed">"env_fin_982410_wire"</span>,
+  <span class="text-white">"amount"</span>: 420000.00,
+  <span class="text-white">"currency"</span>: <span class="text-secondary-fixed">"USD"</span>,
+  <span class="text-white">"destination"</span>: {
+    <span class="text-white">"bank"</span>: <span class="text-error-container">"EuroClear Bank Limassol"</span>, <span class="text-outline">// DRIFT: Was 'JPMorgan Chase NY'</span>
+    <span class="text-white">"iban"</span>: <span class="text-error-container">"CY2900200128000000029102"</span>, <span class="text-outline">// DRIFT: Was '021000021-8841'</span>
+    <span class="text-white">"jurisdiction"</span>: <span class="text-error-container">"CY"</span>
+  },
+  <span class="text-white">"nonce"</span>: <span class="text-secondary-fixed">"WIRE-839-902"</span>,
+  <span class="text-white">"policy_quorum"</span>: <span class="text-secondary-fixed">"TIER_1_EXECUTIVE_DUAL"</span>,
+  <span class="text-white">"proofs"</span>: {
+    <span class="text-white">"aletheia_synthetic_score"</span>: 0.02,
+    <span class="text-white">"eidos_biometric_confidence"</span>: 0.964
+  }
+}</pre>
+</div>
+<div class="p-space-md border-t border-border-subtle bg-surface-container-low flex justify-end">
+<button class="px-4 py-1.5 bg-primary text-white rounded text-xs font-label-md font-medium" onclick="closeRawJcs()">Close Inspector</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let isPlaying = false;
+  let playInterval = null;
+  let hasPasskeySigned = false;
+  let chosenArbitration = 'revert';
+
+  function triggerToast(message, title = 'ACTIONLOCK Gateway', icon = 'info') {
+    const toast = document.getElementById('toastNotification');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+    toastTitle.textContent = title;
+    toastMsg.textContent = message;
+    toastIcon.textContent = icon;
+
+    toast.classList.remove('translate-y-[-120%]', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+      dismissToast();
+    }, 4500);
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('toastNotification');
+    toast.classList.add('translate-y-[-120%]', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+
+  function toggleAudioSimulation() {
+    const btnIcon = document.getElementById('audioPlayIcon');
+    const waveform = document.getElementById('waveformPath');
+    const timerDisplay = document.getElementById('timerDisplay');
+
+    isPlaying = !isPlaying;
+    if (isPlaying) {
+      btnIcon.textContent = 'pause';
+      triggerToast('Audio verification stream playback active (48kHz Lossless PCM).', 'Audio Telemetry', 'graphic_eq');
+      waveform.setAttribute('stroke', '#7ed4d8');
+      
+      let seconds = 18.4;
+      playInterval = setInterval(() => {
+        seconds = (seconds > 29.5) ? 0 : seconds + 0.1;
+        timerDisplay.textContent = '00:' + seconds.toFixed(1);
+      }, 100);
+    } else {
+      btnIcon.textContent = 'play_arrow';
+      waveform.setAttribute('stroke', 'currentColor');
+      clearInterval(playInterval);
+    }
+  }
+
+  function simulateReRecord() {
+    triggerToast('Prompting Elena Rostova for ephemeral voice challenge #WIRE-839-903...', 'VoIP Dispatch', 'call');
+  }
+
+  function triggerWebAuthn() {
+    const passkeyBox = document.getElementById('passkeyTriggerBox');
+    const btn = document.getElementById('webauthnBtn');
+
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Reading FIDO2 Authenticator...`;
+
+    setTimeout(() => {
+      hasPasskeySigned = true;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-status-success">check_circle</span> Hardware Passkey Attested`;
+      btn.className = "mt-1 px-4 py-2 bg-status-success/10 text-status-success border border-status-success/30 rounded text-xs font-label-md font-semibold transition-all flex items-center gap-2";
+      
+      triggerToast('Passkey FIDO2 challenge signed with Marcus Vance hardware key. Quorum ready.', 'WebAuthn HSM', 'verified');
+      
+      document.getElementById('authorizeBtnText').textContent = "Authorize & Release Scoped Wire Permit";
+    }, 1200);
+  }
+
+  function toggleArbitration(val) {
+    chosenArbitration = val;
+    const authBtn = document.getElementById('btnAuthorize');
+    if (val === 'override') {
+      authBtn.className = "px-4 py-2 bg-status-warning hover:bg-[#854d0e] text-white rounded font-label-md text-label-md font-semibold transition-all flex items-center gap-2 shadow";
+      triggerToast('Caution: Offshore Cyprus beneficiary designated. Requires dual FIDO2 authorization.', 'Arbitration Policy', 'warning');
+    } else {
+      authBtn.className = "px-4 py-2 bg-secondary hover:bg-[#004f52] text-white rounded font-label-md text-label-md font-semibold transition-all flex items-center gap-2 shadow";
+      triggerToast('Defaulting to stored JPMorgan Chase beneficiary. Safe domestic execution.', 'Arbitration Policy', 'undo');
+    }
+  }
+
+  function handleQuarantineFraud() {
+    if (confirm("Are you sure you want to quarantine envelope env_fin_982410_wire and escalate to Corporate SecOps Fraud Dispatch?")) {
+      triggerToast('Envelope locked in permanent QUARANTINE. Incident SEC-INC-4091 dispatched to Marcus Vance & Treasury Ops.', 'Fraud Escalation', 'gavel');
+    }
+  }
+
+  function handleRevertBeneficiary() {
+    triggerToast('Hash drift discarded. Envelope regenerated targeting verified JPMorgan Chase account ending in 8841.', 'Remediation', 'published_with_changes');
+  }
+
+  function handleAuthorizeAction() {
+    if (!hasPasskeySigned) {
+      triggerToast('Execution blocked: Marcus Vance (Co-Signer) must touch physical hardware key to fulfill Tier 1 quorum.', 'Security Block', 'error');
+      return;
+    }
+    triggerToast('Authorization Permit Released to SAP S/4HANA Gateway. SHA256 receipt logged to tamper-proof audit trail.', 'Execution Authorized', 'task_alt');
+  }
+
+  function inspectRawJcs() {
+    const modal = document.getElementById('jcsModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeRawJcs() {
+    const modal = document.getElementById('jcsModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+</script></main></div></body></html>

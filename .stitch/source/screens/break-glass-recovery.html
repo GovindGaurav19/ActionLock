@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c4c6ce", "surface-container-lowest": "#ffffff", "on-surface": "#111c2c", "on-tertiary": "#ffffff", "secondary": "#00696d", "inverse-primary": "#b4c8e9", "border-subtle": "#E2E8F0", "secondary-fixed-dim": "#7ed4d8", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#a4cbeb", "on-tertiary-fixed-variant": "#214a65", "on-background": "#111c2c", "error-container": "#ffdad6", "outline": "#74777e", "background": "#f9f9ff", "status-success": "#237A57", "tertiary-fixed": "#c9e6ff", "on-primary-container": "#7f93b2", "on-primary": "#ffffff", "surface-container-low": "#f0f3ff", "on-primary-fixed-variant": "#354863", "on-tertiary-fixed": "#001e2f", "status-error": "#B54747", "tertiary-container": "#002d45", "surface-bright": "#f9f9ff", "on-secondary": "#ffffff", "inverse-surface": "#263142", "canvas-bg": "#F5F7FA", "on-secondary-container": "#007074", "surface-tint": "#4c5f7c", "secondary-container": "#9af1f5", "on-primary-fixed": "#061c35", "on-error": "#ffffff", "surface-container-high": "#dee9ff", "primary-fixed": "#d4e3ff", "inverse-on-surface": "#ebf1ff", "tertiary": "#001826", "surface": "#FFFFFF", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004f52", "surface-variant": "#d8e3fa", "on-tertiary-container": "#6f96b4", "on-surface-variant": "#44474d", "secondary-fixed": "#9af1f5", "primary-container": "#172b45", "primary": "#01162f", "error": "#ba1a1a", "surface-container-highest": "#d8e3fa", "text-secondary": "#64748B", "sidebar-bg": "#14243A", "primary-fixed-dim": "#b4c8e9", "surface-dim": "#cfdaf1", "status-warning": "#A56B18", "on-secondary-fixed": "#002021" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "margin": "1.5rem", "space-lg": "1rem", "space-sm": "0.5rem", "space-xl": "1.5rem" }, "fontFamily": { "headline-xl": ["Inter"], "mono-badge": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "mono-data": ["JetBrains Mono"], "label-sm": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "mono-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script></head><body class="bg-canvas-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar-bg z-50 flex flex-col border-r border-[#1E385B] text-inverse-on-surface select-none"><div class="p-space-lg border-b border-[#1E385B] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ACTIONLOCK Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDJAutoi8SJpIsza-EsjijR_avsYKLxuxToxw0bjY-XHlw3ibfClBbZ_jHsarARVfbHRZRAKZ7WTN4GB1r0SO_RyY9GNgnsDW6zDIqbhvAP_0A0-8Sf9ZvcPLjX-_XX3xWOeJZLwUnU2jsmi6MYfdyQUwn1yG7DDaLEU4nv15aswynFLp9dKx6zNxJtw3a3zZZB4roubQZaH2r41qnFRmhQN2sXN0Wo4CJvhmTLrgM"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">ACTIONLOCK</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-primary-container text-primary-fixed border border-[#214a65] tracking-wider">ENTERPRISE</span></div><div class="flex items-center justify-between px-2 py-1.5 rounded bg-[#0d1826] border border-[#1e385b]"><div class="flex items-center gap-space-xs"><span class="h-1.5 w-1.5 rounded-full bg-status-warning animate-pulse"></span><span class="font-mono-badge text-mono-badge text-text-secondary">DEMO ENV • FIXTURES</span></div><div class="flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-status-error"></span><span class="font-mono-badge text-[10px] text-error font-medium">QUORUM READY</span></div></div></div><div class="flex-1 overflow-y-auto py-space-sm px-space-sm"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-white border-l-2 border-secondary font-medium"><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="overview-dashboard" href="#"><span class="font-label-md text-label-md">Overview</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="action-inbox" href="#"><span class="font-label-md text-label-md">Action Inbox</span><span class="font-mono-badge text-mono-badge px-1.5 py-0.2 rounded bg-error/20 text-error-container border border-error/30">3 pending</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="simulated-finance-beneficiary-change-authorization" href="#"><span class="font-label-md text-label-md">Finance Beneficiary Action</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="approvals-step-up" href="#"><span class="font-label-md text-label-md">Approvals &amp; Step-Up</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="scoped-permit-webauthn-step-up" href="#"><span class="font-label-md text-label-md">Scoped Permit / WebAuthn Step-Up</span><span class="font-mono-badge text-mono-badge px-1.5 py-0.2 rounded bg-secondary-container/20 text-secondary-fixed border border-secondary/30">FIDO2</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="voice-registry" href="#"><span class="font-label-md text-label-md">Voice Registry</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="security-policies" href="#"><span class="font-label-md text-label-md">Security Policies</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="integrations" href="#"><span class="font-label-md text-label-md">Integrations</span><span class="font-mono-badge text-mono-badge text-text-secondary opacity-75">3 LIVE</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="webhook-monitor" href="#"><span class="font-label-md text-label-md">Webhook Monitor</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="audit-trail" href="#"><span class="font-label-md text-label-md">Audit Trail</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors" data-path="security-incidents" href="#"><span class="font-label-md text-label-md">Security Incidents</span></a><div class="my-2 border-t border-[#1E385B]/60"></div><a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded transition-colors group bg-primary-container text-white border-l-2 border-secondary font-medium" data-path="break-glass-recovery" href="#"><span class="font-label-md text-label-md text-error-container font-medium">Break-Glass Recovery</span><span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-error/20 text-error border border-error/40 flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-error animate-ping"></span>EMERGENCY</span></a></nav></div><div class="p-space-md border-t border-[#1E385B] bg-[#0d1826]"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-[#1e385b]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/><span class="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-status-success ring-1 ring-[#0d1826]"></span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md font-medium text-white truncate max-w-[90px]">Marcus Vance</span><span class="font-mono-badge text-[9px] uppercase px-1 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Owner</span></div><span class="font-body-sm text-[11px] text-text-secondary truncate max-w-[130px]">Principal SecOps</span></div></div><button class="text-text-secondary hover:text-white transition-colors p-1"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface border-b border-border-subtle z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">shield</span><span>Gateway</span><span class="text-outline-variant">/</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-border-subtle text-on-surface cursor-pointer hover:bg-surface-container transition-colors"><span class="font-medium">Acme Global Infrastructure</span><span class="font-mono-badge text-mono-badge text-text-secondary">(US-East)</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div></div><div class="relative w-80"><div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"><span class="material-symbols-outlined text-[18px] text-text-secondary">search</span></div><input class="w-full h-9 pl-8 pr-12 rounded border border-border-subtle bg-canvas-bg font-body-sm text-body-sm text-on-surface placeholder:text-text-secondary focus:outline-none focus:border-secondary focus:bg-surface transition-all" placeholder="Search Action ID, Commit SHA, Envelope..." type="text"/><div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none"><kbd class="font-mono-badge text-[10px] px-1.5 py-0.5 bg-surface rounded border border-border-subtle text-text-secondary shadow-sm">&amp;#8984;K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#ecfdf5] border border-[rgba(35,122,87,0.25)] text-status-success font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-status-success"></span>API GATEWAY: OPERATIONAL</div><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.25)] text-secondary font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>DETECTIFAI: HEALTHY</div></div><div class="h-4 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Documentation"><span class="material-symbols-outlined text-[20px]">menu_book</span></button><button class="relative w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Alerts"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-error"></span></button><a class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#fef2f2] border border-[rgba(181,71,71,0.25)] text-status-error hover:bg-error hover:text-white transition-all font-mono-badge text-mono-badge" data-path="break-glass-recovery" href="#"><span class="material-symbols-outlined text-[16px]">warning</span><span>BREAK-GLASS</span></a></div><div class="h-8 w-px bg-border-subtle"></div><div class="flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-border-subtle cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/></div></div></header><main class="w-full pt-16 min-h-screen bg-canvas-bg"><div class="flex flex-col w-full">
+<!-- Critical Out-of-Band Incident Header Scrim -->
+<section class="w-full bg-[#111c2c] text-white p-space-xl shadow-md relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-status-error/10 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg relative z-10">
+<!-- Top Badges & System State -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-status-error text-white font-mono-badge text-mono-badge tracking-wider uppercase shadow-sm">
+<span class="h-2 w-2 rounded-full bg-white animate-ping"></span>
+            AIR-GAPPED HARDWARE HSM RUNTIME
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#1f2e45] text-secondary-fixed font-mono-badge text-mono-badge tracking-wider border-none">
+<span class="material-symbols-outlined text-[14px]">offline_bolt</span>
+            AUTONOMOUS LOCAL RECOVERY MODE
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#2a1720] text-error-container font-mono-badge text-mono-badge">
+<span class="material-symbols-outlined text-[14px]">link_off</span>
+            DETECTIFAI &amp; IDP DISCONNECTED
+          </span>
+</div>
+<!-- Session Countdown Timer -->
+<div class="flex items-center gap-space-sm bg-[#06121f] px-3.5 py-1.5 rounded shadow-inner">
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-mono-badge text-outline-variant tracking-widest uppercase">TTL AUTO-LOCKDOWN</span>
+<div class="flex items-center gap-1 font-mono-badge text-[18px] text-error-container font-bold" id="countdown-timer">
+<span id="timer-hours">01</span>:<span id="timer-minutes">59</span>:<span id="timer-seconds">59</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-status-error text-[22px]">timer</span>
+</div>
+</div>
+<!-- Main Incident Title & Architectural Declaration -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-lg">
+<div class="max-w-3xl space-y-2">
+<div class="flex items-center gap-2 text-error-container font-mono-badge text-mono-badge">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>INCIDENT REF: INC-2025-0891 (Primary IdP &amp; DetectifAI Gateway Cluster Severed)</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-white tracking-tight">
+            Break-Glass Out-of-Band Hardware Cryptographic Recovery
+          </h1>
+<p class="font-body-md text-body-md text-outline-variant leading-relaxed">
+            Zero-Trust Fallback Enclave. Operating completely independent of ACTIONLOCK Cloud, central policy services, and upstream network dependencies. All actions are cryptographically sealed to local HSM write-once registers.
+          </p>
+</div>
+<!-- Emergency Isolation Push -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm shrink-0">
+<button class="px-4 py-2.5 rounded bg-status-error hover:bg-error text-white font-label-md text-label-md flex items-center justify-center gap-2 transition-all shadow-md active:scale-95" id="abort-btn">
+<span class="material-symbols-outlined text-[18px]">gpp_bad</span>
+<span>ABORT &amp; ENGAGE TOTAL ISOLATION</span>
+</button>
+</div>
+</div>
+<!-- Out-of-Band Hardware Broadcast Notice -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-2">
+<div class="bg-[#172b45] p-3 rounded flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">satellite_alt</span>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] font-mono-badge text-outline-variant uppercase">Satellite Burst Status</span>
+<span class="font-mono-badge text-mono-badge text-white truncate">Iridium LEO Sync: ACK_CONFIRMED</span>
+</div>
+</div>
+<div class="bg-[#172b45] p-3 rounded flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-status-warning text-[20px]">contactless</span>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] font-mono-badge text-outline-variant uppercase">Air-Gap Local Bus</span>
+<span class="font-mono-badge text-mono-badge text-white truncate">FIPS 140-3 Level 4 Active</span>
+</div>
+</div>
+<div class="bg-[#172b45] p-3 rounded flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-status-success text-[20px]">mark_email_read</span>
+<div class="flex flex-col min-w-0">
+<span class="text-[10px] font-mono-badge text-outline-variant uppercase">Executive Pager Push</span>
+<span class="font-mono-badge text-mono-badge text-white truncate">7 Recipients Broadcasted</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Multi-Column Recovery Console -->
+<div class="w-full max-w-7xl mx-auto p-space-xl flex flex-col gap-space-xl">
+<!-- Quorum Status Progress Indicator (2-of-3 Shamir's Secret Sharing) -->
+<div class="w-full bg-surface p-space-lg rounded shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-status-warning/15 flex items-center justify-center text-status-warning shrink-0">
+<span class="material-symbols-outlined text-[28px]">key</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Shamir's Multi-Person Secret Sharing Quorum</h2>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-[#fffbeb] text-status-warning">
+              THRESHOLD: 2 OF 3 REQUIRED
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+            Decryption of the root vault breakout envelope requires physical injection of at least two independent SmartCard key shards.
+          </p>
+</div>
+</div>
+<!-- Quorum Pill Gauge -->
+<div class="flex items-center gap-space-md w-full md:w-auto justify-end">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-badge text-headline-sm font-bold text-on-surface">1</span>
+<span class="font-mono-badge text-headline-sm text-text-secondary">/</span>
+<span class="font-mono-badge text-headline-sm font-bold text-on-surface">2</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase ml-1">SHARDS LOADED</span>
+</div>
+<div class="w-48 h-2 bg-surface-container-high rounded-full overflow-hidden mt-1">
+<div class="bg-status-warning h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+</div>
+</div>
+<div class="h-10 w-px bg-surface-container-high hidden md:block"></div>
+<div class="px-3 py-1.5 rounded bg-surface-container-low flex flex-col items-center">
+<span class="text-[10px] font-mono-badge text-text-secondary uppercase">ENCLAVE</span>
+<span class="font-mono-badge text-mono-badge text-status-success font-semibold">SEALED (AWAITING Q2)</span>
+</div>
+</div>
+</div>
+<!-- 12-Column Responsive Layout: Left 7 Shards & Envelope / Right 5 Hardware Token & Target -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- LEFT 7 COLUMNS: Custodian Verification & Justification Binding -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Custodian Key Shares Panel -->
+<div class="bg-surface rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Designated Physical Custodians (2-of-3)</span>
+</div>
+<span class="font-mono-badge text-[10px] text-text-secondary uppercase">LOCAL BUS AUTH</span>
+</div>
+<div class="flex flex-col gap-space-sm pt-2">
+<!-- Custodian A: Sarah Jenkins (Loaded) -->
+<div class="p-space-md rounded bg-[#ecfdf5] flex flex-col sm:flex-row sm:items-center justify-between gap-space-md shadow-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center text-status-success font-semibold text-body-md overflow-hidden relative">
+<span class="material-symbols-outlined text-[20px] text-status-success">credit_card</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Sarah Jenkins</span>
+<span class="font-mono-badge text-[10px] px-1.5 py-0.2 rounded bg-surface text-text-secondary">SecOps Director</span>
+</div>
+<span class="font-mono-data text-mono-data text-text-secondary">Slot 1: Yubikey 5 FIPS (SN: 9812-4019-B)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 sm:self-center">
+<span class="inline-flex items-center gap-1 font-mono-badge text-mono-badge text-status-success px-2 py-0.5 rounded bg-surface">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  SHARD INGESTED
+                </span>
+</div>
+</div>
+<!-- Custodian B: Marcus Vance (Awaiting Ingestion - Active Interaction) -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-space-md shadow-xs">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center text-status-warning font-semibold text-body-md">
+<span class="material-symbols-outlined text-[20px] text-status-warning animate-pulse">contactless</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Marcus Vance</span>
+<span class="font-mono-badge text-[9px] uppercase px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Current Session</span>
+</div>
+<span class="font-mono-data text-mono-data text-text-secondary">Slot 2: Physical SmartCard Reader #02</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-mono-badge text-mono-badge text-status-warning px-2 py-0.5 rounded bg-[#fffbeb] self-start sm:self-center">
+<span class="h-1.5 w-1.5 rounded-full bg-status-warning animate-ping"></span>
+                  PIN &amp; TOUCH REQUIRED
+                </span>
+</div>
+<!-- Interactive PIN & Physical Ingestion Mock Form -->
+<div class="bg-surface p-space-md rounded flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col flex-1">
+<label class="font-label-sm text-label-sm text-text-secondary uppercase">Hardware Token PIN (FIPS Enclave)</label>
+<div class="relative mt-1">
+<input class="w-full h-9 px-3 rounded bg-canvas-bg font-mono-data text-mono-data text-on-surface focus:outline-none focus:bg-surface transition-all tracking-widest" id="hw-pin-input" maxlength="8" placeholder="••••••••" type="password" value="491028"/>
+<span class="absolute right-3 top-2 font-mono-badge text-[10px] text-text-secondary">8-DIGIT</span>
+</div>
+</div>
+<button class="sm:self-end h-9 px-4 rounded bg-secondary hover:bg-on-secondary-container text-white font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-xs" id="ingest-shard-btn">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span>Touch &amp; Ingest Shard 2</span>
+</button>
+</div>
+<div class="font-mono-badge text-[11px] text-text-secondary flex items-center gap-1" id="shard-status-msg">
+<span class="material-symbols-outlined text-[13px] text-secondary">info</span>
+<span>Awaiting hardware token touch confirmation on physical reader Slot #02.</span>
+</div>
+</div>
+</div>
+<!-- Custodian C: Dr. Aris Thorne (Standby) -->
+<div class="p-space-md rounded bg-surface-container-lowest opacity-75 flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-text-secondary font-semibold text-body-md">
+<span class="material-symbols-outlined text-[20px]">person_off</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dr. Aris Thorne</span>
+<span class="font-mono-badge text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-text-secondary">Alternate Custodian</span>
+</div>
+<span class="font-mono-data text-mono-data text-text-secondary">Slot 3: Remote Off-Site SmartCard (Inactive)</span>
+</div>
+</div>
+<span class="font-mono-badge text-mono-badge text-text-secondary px-2 py-0.5 rounded bg-surface-container">
+                STANDBY / UNUSED
+              </span>
+</div>
+</div>
+</div>
+<!-- Mandatory Incident Justification & Bound Ticket -->
+<div class="bg-surface rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">assignment_late</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Incident Justification &amp; Envelope Scope</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-error/10 text-status-error font-semibold">NON-BYPASSABLE AUDIT</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary uppercase">Associated P1 Ticket ID</label>
+<div class="flex items-center gap-2 h-9 px-3 rounded bg-canvas-bg font-mono-data text-mono-data text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">confirmation_number</span>
+<span class="font-semibold">JIRA-SECOP-9418</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary uppercase">Session Time-to-Live (Strict)</label>
+<div class="flex items-center gap-2 h-9 px-3 rounded bg-canvas-bg font-mono-data text-mono-data text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-status-warning">schedule</span>
+<span>120 Minutes Max (Forced Expiration)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary uppercase">Operational Justification Declaration</label>
+<textarea class="w-full p-2.5 rounded bg-canvas-bg font-body-sm text-body-sm text-on-surface resize-none focus:outline-none leading-relaxed" readonly="" rows="3">Production API Gateway and DetectifAI cluster partitioned due to multi-region cloud transit VPC failure. Centralized WebAuthn / Voice verification unreachable. Direct breakout required to initiate manual BGP routing failover and restart core auth orchestration.</textarea>
+</div>
+<!-- Strict Mandatory Enforcement Checkboxes -->
+<div class="flex flex-col gap-space-xs pt-1">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded accent-secondary cursor-not-allowed" disabled="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+                I certify under enterprise cryptographic policy that this break-glass key assembly will be used strictly for remediation of incident <strong class="font-mono-data">INC-2025-0891</strong>.
+              </span>
+</label>
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded accent-secondary cursor-not-allowed" disabled="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+                Keystroke recording, terminal streaming, and raw packets will be continuously mirrored to air-gapped WORM optical drives.
+              </span>
+</label>
+</div>
+</div>
+<!-- Cryptographic Execution Trigger Card -->
+<div class="bg-surface rounded p-space-lg shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-lg" id="assembly-action-card">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">lock_open</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Reassemble Cryptographic Master Key</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+              Once both physical key shares are verified, the local FIPS TPM will compute the root recovery session token.
+            </p>
+</div>
+<button class="px-6 py-3 rounded bg-surface-container-high text-text-secondary font-label-md text-label-md flex items-center justify-center gap-2 transition-all cursor-not-allowed shadow-none" disabled="" id="reassemble-btn">
+<span class="material-symbols-outlined text-[18px]">vpn_key</span>
+<span>Synthesize Master Key</span>
+</button>
+</div>
+</div>
+<!-- RIGHT 5 COLUMNS: Narrow Scope, WORM Ledger, Automated Invariants -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- Narrow Target Scope Definition -->
+<div class="bg-surface rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">gps_fixed</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Narrow Target Scope</span>
+</div>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-text-secondary">RESTRICTED</span>
+</div>
+<div class="flex flex-col gap-space-sm pt-2">
+<div class="p-2.5 rounded bg-canvas-bg flex flex-col gap-1">
+<span class="text-[10px] font-mono-badge text-text-secondary uppercase">IAM Role Target ARN</span>
+<span class="font-mono-data text-mono-data text-on-surface break-all font-semibold">aws.iam.role/EmergencyBreakGlass_ProdVault_Breakout</span>
+</div>
+<div class="p-2.5 rounded bg-canvas-bg flex flex-col gap-1">
+<span class="text-[10px] font-mono-badge text-text-secondary uppercase">Allowed Enclave Commands</span>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="px-2 py-0.5 rounded bg-surface font-mono-badge text-[11px] text-secondary shadow-xs">bgp-route-reconverge</span>
+<span class="px-2 py-0.5 rounded bg-surface font-mono-badge text-[11px] text-secondary shadow-xs">hsm-ceremony-init</span>
+<span class="px-2 py-0.5 rounded bg-surface font-mono-badge text-[11px] text-secondary shadow-xs">sysctl-net-drain</span>
+</div>
+</div>
+<div class="p-2.5 rounded bg-[#fef2f2] flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 text-status-error">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span class="font-mono-badge text-mono-badge">EXCLUDED ACTIONS</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-error uppercase">S3 DROP, IAM DELETE, SEC-LOG PURGE</span>
+</div>
+</div>
+</div>
+<!-- Mandatory Automated Post-Access Guarantees -->
+<div class="bg-surface rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">auto_mode</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Post-Access Enforcements</span>
+</div>
+<span class="font-mono-badge text-[10px] text-status-success font-semibold">HARDWARE LOCKED</span>
+</div>
+<ul class="flex flex-col gap-space-sm pt-2">
+<li class="flex items-start gap-2.5 p-2 rounded bg-canvas-bg">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 shrink-0">sync_saved_locally</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mandatory Credential Rotation at t+120m</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Root private keys, certificates, and STS session credentials automatically shredded and rotated on expiry.</span>
+</div>
+</li>
+<li class="flex items-start gap-2.5 p-2 rounded bg-canvas-bg">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 shrink-0">memory</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Immutable WORM Audit Streaming</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Every hardware register call and SSH session frame is written to optical non-rewritable flash storage.</span>
+</div>
+</li>
+<li class="flex items-start gap-2.5 p-2 rounded bg-canvas-bg">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 shrink-0">notification_important</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Autonomous Post-Mortem Packet Freeze</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Full forensic forensic dump automatically bundled and signed with TPM quote for external regulatory review.</span>
+</div>
+</li>
+</ul>
+</div>
+<!-- Live Physical Enclave Audit Ledger (Inline WORM Log) -->
+<div class="bg-surface rounded p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="h-2 w-2 rounded-full bg-status-success animate-pulse"></span>
+<span class="font-mono-badge text-[11px] text-on-surface uppercase font-semibold">Local TPM Audit Bus</span>
+</div>
+<span class="font-mono-data text-[10px] text-text-secondary">BUS ID: tpm-enclave-01</span>
+</div>
+<div class="bg-[#0b1320] text-outline-variant p-3 rounded font-mono-data text-[11px] flex flex-col gap-1.5 overflow-x-auto">
+<div class="text-[#84a98c]">
+<span class="text-text-secondary">[14:02:11 UTC]</span> SEC_EVENT: Physical Enclave unsealed via mechanical chassis key #A
+            </div>
+<div class="text-[#c9e6ff]">
+<span class="text-text-secondary">[14:02:19 UTC]</span> SATELLITE: Iridium datagram dispatched to SEC_BOARD (hash: 7e4f..a109)
+            </div>
+<div class="text-[#ecfdf5]">
+<span class="text-text-secondary">[14:03:02 UTC]</span> SHARD_INGEST: Sarah Jenkins SmartCard verified (Ed25519 valid)
+            </div>
+<div class="text-status-warning flex items-center gap-1" id="log-dynamic-line">
+<span class="text-text-secondary">[14:04:45 UTC]</span>
+<span>WAIT: Shard 2 slot 02 touch pending Marcus Vance PIN...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Recovery Session Terminal / Unsealed Output Modal (Hidden by Default) -->
+<div class="hidden bg-[#0d1826] text-white p-space-lg rounded shadow-xl flex-col gap-space-md" id="enclave-terminal-drawer">
+<div class="flex items-center justify-between pb-2 border-b border-[#1e385b]">
+<div class="flex items-center gap-space-sm">
+<span class="h-2.5 w-2.5 rounded-full bg-status-success animate-pulse"></span>
+<span class="font-mono-badge text-mono-badge text-secondary-fixed">ENCLAVE UNSEALED: HARDWARE ROOT TERMINAL ACTIVE</span>
+<span class="font-mono-badge text-[10px] px-2 py-0.5 rounded bg-status-error text-white font-bold">AIR-GAP BYPASS ACTIVE</span>
+</div>
+<button class="text-text-secondary hover:text-white transition-colors" id="close-terminal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md p-space-sm bg-[#06101c] rounded font-mono-data text-mono-data">
+<div>
+<span class="text-text-secondary text-[10px] uppercase block">Ephemeral Session Token</span>
+<span class="text-white select-all font-bold">ak_breakglass_7f99b240e1081da2c9</span>
+</div>
+<div>
+<span class="text-text-secondary text-[10px] uppercase block">Hardware Signing Key SHA-256</span>
+<span class="text-white select-all">e3b0c44298fc1c149afbf4c8996fb92427ae41e4</span>
+</div>
+<div>
+<span class="text-text-secondary text-[10px] uppercase block">Auto-Zeroize Scheduled</span>
+<span class="text-status-warning font-bold">t+119m 58s (Strict)</span>
+</div>
+</div>
+<div class="p-3 bg-[#02060d] rounded font-mono-data text-[12px] text-emerald-400 space-y-1">
+<p># actionlock-hw-enclave --partition-override --target aws.iam.role/EmergencyBreakGlass_ProdVault_Breakout</p>
+<p class="text-outline-variant">[+] Hardware Quorum verified: Sarah Jenkins [OK], Marcus Vance [OK]. Master seed regenerated.</p>
+<p class="text-outline-variant">[+] Local TPM write log sealed to WORM register #04 (Block 91024).</p>
+<p class="text-white font-bold">[!] ROOT ACCESS RESTRICTED TO BGP-ROUTE-RECONVERGE AND HSM CEREMONIAL REBOOT.</p>
+<div class="flex items-center gap-1 text-white pt-2">
+<span>root@actionlock-airgap-gateway:~#</span>
+<span class="h-4 w-2 bg-white animate-pulse"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Logic Script -->
+<script>
+    (function initBreakGlassRecovery() {
+      // 1. Live Countdown Timer (01:59:59)
+      let totalSeconds = 1 * 3600 + 59 * 60 + 59;
+      const hoursEl = document.getElementById('timer-hours');
+      const minsEl = document.getElementById('timer-minutes');
+      const secsEl = document.getElementById('timer-seconds');
+
+      setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          const h = Math.floor(totalSeconds / 3600);
+          const m = Math.floor((totalSeconds % 3600) / 60);
+          const s = totalSeconds % 60;
+          if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
+          if (minsEl) minsEl.textContent = String(m).padStart(2, '0');
+          if (secsEl) secsEl.textContent = String(s).padStart(2, '0');
+        }
+      }, 1000);
+
+      // 2. Custodian B Physical Ingestion Workflow
+      const ingestBtn = document.getElementById('ingest-shard-btn');
+      const pinInput = document.getElementById('hw-pin-input');
+      const statusMsg = document.getElementById('shard-status-msg');
+      const reassembleBtn = document.getElementById('reassemble-btn');
+      const logLine = document.getElementById('log-dynamic-line');
+      const terminalDrawer = document.getElementById('enclave-terminal-drawer');
+      const closeTerminalBtn = document.getElementById('close-terminal-btn');
+      const abortBtn = document.getElementById('abort-btn');
+
+      if (ingestBtn) {
+        ingestBtn.addEventListener('click', () => {
+          ingestBtn.disabled = true;
+          ingestBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Ingesting Shard...';
+          
+          setTimeout(() => {
+            // Success state for Custodian B
+            ingestBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-white">check</span> Verified';
+            ingestBtn.classList.remove('bg-secondary', 'hover:bg-on-secondary-container');
+            ingestBtn.classList.add('bg-status-success', 'text-white');
+            
+            if (statusMsg) {
+              statusMsg.innerHTML = '<span class="material-symbols-outlined text-[13px] text-status-success">verified</span> <span class="text-status-success font-semibold">Key Shard 2 Verified via Touch. FIPS Quorum Met (2-of-3).</span>';
+            }
+
+            if (logLine) {
+              logLine.className = 'text-[#ecfdf5] flex items-center gap-1';
+              logLine.innerHTML = '<span class="text-text-secondary">[14:05:01 UTC]</span> SHARD_INGEST: Marcus Vance SmartCard (Slot 2) verified (ECDSA P-384 OK)';
+            }
+
+            // Enable master assembly trigger
+            if (reassembleBtn) {
+              reassembleBtn.disabled = false;
+              reassembleBtn.classList.remove('bg-surface-container-high', 'text-text-secondary', 'cursor-not-allowed');
+              reassembleBtn.classList.add('bg-secondary', 'hover:bg-on-secondary-container', 'text-white', 'cursor-pointer', 'shadow-md', 'active:scale-95');
+            }
+          }, 1200);
+        });
+      }
+
+      // 3. Synthesize Master Key & Reveal Terminal Enclave
+      if (reassembleBtn) {
+        reassembleBtn.addEventListener('click', () => {
+          reassembleBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">autorenew</span> Unsealing Enclave...';
+          setTimeout(() => {
+            reassembleBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span> Enclave Unsealed';
+            if (terminalDrawer) {
+              terminalDrawer.classList.remove('hidden');
+              terminalDrawer.classList.add('flex');
+              terminalDrawer.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 1500);
+        });
+      }
+
+      if (closeTerminalBtn && terminalDrawer) {
+        closeTerminalBtn.addEventListener('click', () => {
+          terminalDrawer.classList.add('hidden');
+          terminalDrawer.classList.remove('flex');
+        });
+      }
+
+      // 4. Abort & Engage Isolation
+      if (abortBtn) {
+        abortBtn.addEventListener('click', () => {
+          if (confirm('CRITICAL ACTION: Abort emergency recovery and physically zeroize all local enclave memories? This will sever all air-gapped recovery interfaces.')) {
+            document.body.innerHTML = `
+              <div class="w-full min-h-screen bg-[#111c2c] text-white flex flex-col items-center justify-center p-8 text-center space-y-4">
+                <span class="material-symbols-outlined text-[64px] text-status-error">lock</span>
+                <h1 class="font-headline-xl text-headline-xl text-status-error font-bold tracking-tight">ENCLAVE ZEROIZED & ISOLATED</h1>
+                <p class="font-body-md text-body-md text-outline-variant max-w-xl">
+                  Local TPM cryptographic registers have been scrubbed. All emergency recovery channels are severed. Physical intervention at datacenter rack vault is now required.
+                </p>
+                <div class="font-mono-badge text-mono-badge text-text-secondary pt-4">
+                  EVENT LOGGED TO SEC_DISPATCH #WORM-9902
+                </div>
+              </div>
+            `;
+          }
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c4c6ce", "surface-container-lowest": "#ffffff", "on-surface": "#111c2c", "on-tertiary": "#ffffff", "secondary": "#00696d", "inverse-primary": "#b4c8e9", "border-subtle": "#E2E8F0", "secondary-fixed-dim": "#7ed4d8", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#a4cbeb", "on-tertiary-fixed-variant": "#214a65", "on-background": "#111c2c", "error-container": "#ffdad6", "outline": "#74777e", "background": "#f9f9ff", "status-success": "#237A57", "tertiary-fixed": "#c9e6ff", "on-primary-container": "#7f93b2", "on-primary": "#ffffff", "surface-container-low": "#f0f3ff", "on-primary-fixed-variant": "#354863", "on-tertiary-fixed": "#001e2f", "status-error": "#B54747", "tertiary-container": "#002d45", "surface-bright": "#f9f9ff", "on-secondary": "#ffffff", "inverse-surface": "#263142", "canvas-bg": "#F5F7FA", "on-secondary-container": "#007074", "surface-tint": "#4c5f7c", "secondary-container": "#9af1f5", "on-primary-fixed": "#061c35", "on-error": "#ffffff", "surface-container-high": "#dee9ff", "primary-fixed": "#d4e3ff", "inverse-on-surface": "#ebf1ff", "tertiary": "#001826", "surface": "#FFFFFF", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#004f52", "surface-variant": "#d8e3fa", "on-tertiary-container": "#6f96b4", "on-surface-variant": "#44474d", "secondary-fixed": "#9af1f5", "primary-container": "#172b45", "primary": "#01162f", "error": "#ba1a1a", "surface-container-highest": "#d8e3fa", "text-secondary": "#64748B", "sidebar-bg": "#14243A", "primary-fixed-dim": "#b4c8e9", "surface-dim": "#cfdaf1", "status-warning": "#A56B18", "on-secondary-fixed": "#002021" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "margin": "1.5rem", "space-lg": "1rem", "space-sm": "0.5rem", "space-xl": "1.5rem" }, "fontFamily": { "headline-xl": ["Inter"], "mono-badge": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "mono-data": ["JetBrains Mono"], "label-sm": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "mono-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script></head><body class="bg-canvas-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar-bg z-50 flex flex-col border-r border-[#1E385B] text-inverse-on-surface select-none"><div class="p-space-lg border-b border-[#1E385B] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ACTIONLOCK Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDJAutoi8SJpIsza-EsjijR_avsYKLxuxToxw0bjY-XHlw3ibfClBbZ_jHsarARVfbHRZRAKZ7WTN4GB1r0SO_RyY9GNgnsDW6zDIqbhvAP_0A0-8Sf9ZvcPLjX-_XX3xWOeJZLwUnU2jsmi6MYfdyQUwn1yG7DDaLEU4nv15aswynFLp9dKx6zNxJtw3a3zZZB4roubQZaH2r41qnFRmhQN2sXN0Wo4CJvhmTLrgM"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">ACTIONLOCK</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-primary-container text-primary-fixed border border-[#214a65] tracking-wider">ENTERPRISE</span></div><div class="flex items-center gap-space-xs px-2 py-1 rounded bg-[#0d1826] border border-[#1e385b] w-fit"><span class="h-1.5 w-1.5 rounded-full bg-status-warning animate-pulse"></span><span class="font-mono-badge text-mono-badge text-text-secondary">DEMO ENV · FIXTURES</span></div></div><div class="flex-1 overflow-y-auto py-space-sm px-space-sm"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-white border-l-2 border-secondary font-medium"><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="overview-dashboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">dashboard</span><span class="font-label-md text-label-md">Overview</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="action-inbox" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">inbox</span><span class="font-label-md text-label-md">Action Inbox</span></div><span class="font-mono-badge text-mono-badge px-1.5 py-0.2 rounded bg-error/20 text-error-container border border-error/30">3 pending</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="new-protected-action" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">add_moderator</span><span class="font-label-md text-label-md">New Protected Action</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="approvals-step-up" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">verified_user</span><span class="font-label-md text-label-md">Approvals &amp; Step-Up</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="voice-registry" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">record_voice_over</span><span class="font-label-md text-label-md">Voice Registry</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="security-policies" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">policy</span><span class="font-label-md text-label-md">Security Policies</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="integrations" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">integration_instructions</span><span class="font-label-md text-label-md">Integrations</span></div><span class="font-mono-badge text-mono-badge text-text-secondary opacity-75">3 LIVE</span></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="webhook-monitor" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">webhook</span><span class="font-label-md text-label-md">Webhook Monitor</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="audit-trail" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">receipt_long</span><span class="font-label-md text-label-md">Audit Trail</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="security-incidents" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-white">fitbit_push_ups</span><span class="font-label-md text-label-md">Security Incidents</span></div></a><a class="flex items-center justify-between px-3 py-2 rounded text-outline-variant hover:bg-[#1b2f4a] hover:text-white transition-colors group" data-path="break-glass-recovery" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-error">emergency_home</span><span class="font-label-md text-label-md text-error-container">Break-Glass Recovery</span></div></a></nav></div><div class="p-space-md border-t border-[#1E385B] bg-[#0d1826]"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-[#1e385b]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/><span class="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-status-success ring-1 ring-[#0d1826]"></span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md font-medium text-white truncate max-w-[90px]">Marcus Vance</span><span class="font-mono-badge text-[9px] uppercase px-1 py-0.2 rounded bg-secondary-container text-on-secondary-container font-semibold">Owner</span></div><span class="font-body-sm text-[11px] text-text-secondary truncate max-w-[130px]">Principal SecOps</span></div></div><button class="text-text-secondary hover:text-white transition-colors p-1"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface border-b border-border-subtle z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">shield</span><span>Gateway</span><span class="text-outline-variant">/</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-border-subtle text-on-surface cursor-pointer hover:bg-surface-container transition-colors"><span class="font-medium">Acme Global Infrastructure</span><span class="font-mono-badge text-mono-badge text-text-secondary">(US-East)</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div></div><div class="relative w-80"><div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"><span class="material-symbols-outlined text-[18px] text-text-secondary">search</span></div><input class="w-full h-9 pl-8 pr-12 rounded border border-border-subtle bg-canvas-bg font-body-sm text-body-sm text-on-surface placeholder:text-text-secondary focus:outline-none focus:border-secondary focus:bg-surface transition-all" placeholder="Search Action ID, Commit SHA, Envelope..." type="text"/><div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none"><kbd class="font-mono-badge text-[10px] px-1.5 py-0.5 bg-surface rounded border border-border-subtle text-text-secondary shadow-sm">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#ecfdf5] border border-[rgba(35,122,87,0.25)] text-status-success font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-status-success"></span>API GATEWAY: OPERATIONAL</div><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-[#f0fdfa] border border-[rgba(22,124,128,0.25)] text-secondary font-mono-badge text-mono-badge"><span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>DETECTIFAI: HEALTHY</div></div><div class="h-4 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Documentation"><span class="material-symbols-outlined text-[20px]">menu_book</span></button><button class="relative w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Alerts"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-error"></span></button><a class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#fef2f2] border border-[rgba(181,71,71,0.25)] text-status-error hover:bg-error hover:text-white transition-all font-mono-badge text-mono-badge" data-path="break-glass-recovery" href="#"><span class="material-symbols-outlined text-[16px]">warning</span><span>BREAK-GLASS</span></a></div><div class="h-8 w-px bg-border-subtle"></div><div class="flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-border-subtle cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAen1jfnqcWyS6gVvyMzD8CNqnAeeaa99jjx3aNMbRC1bm4y6iu_5bhwgqRFNGpWduI_wQzX8SmCRcuh8Jl_t-5sGmX_Rup4QWIqcAs_Itkub4CInGRCL-XL_FfRJvmHtTF8Yx65xOhZFFTV9TjoCvCRXeYcMl3BU7d9am6eUJdVzzGwuvu8gA-6oGAugvcGy_TFl4O77xhilYbswWWcX8V5CSzsrXfMXNZXaCWAg"/></div></div></header><main class="w-full pt-16 min-h-screen bg-canvas-bg"><div class="flex flex-col w-full px-space-xl py-space-xl gap-space-lg">
+<!-- Header & Ledger Integrity Summary -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-mono-badge text-mono-badge uppercase px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">WORM LEDGER · BLOCK #48,912</span>
+<span class="font-mono-badge text-mono-badge uppercase px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          MERKLE ROOT INTACT
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Immutable Audit Trail</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-2xl">Cryptographically chained chronological ledger of Action Envelopes, AI evidence, policy evaluations, and hardware step-ups.</p>
+</div>
+<!-- Compact Inline SVG Telemetry Strip -->
+<div class="flex items-center gap-space-lg bg-surface rounded-lg p-space-md shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-text-secondary">24h Chained Events</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">14,892</span>
+<span class="font-mono-badge text-mono-badge text-status-success">+4.2%</span>
+</div>
+</div>
+<div class="w-28 h-10 flex items-center">
+<svg class="w-full h-full text-secondary" fill="none" viewbox="0 0 112 36" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 28L14 24L24 26L36 16L48 19L60 10L72 14L84 6L96 11L110 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 28L14 24L24 26L36 16L48 19L60 10L72 14L84 6L96 11L110 4V34H2V28Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-text-secondary">Head Hash</span>
+<span class="font-mono-data text-mono-data text-on-surface">sha256:9f84c2...e10a</span>
+</div>
+</div>
+</div>
+<!-- Top Action Bar -->
+<div class="bg-surface rounded-lg p-space-md shadow-sm flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<div class="flex flex-col md:flex-row items-stretch md:items-center gap-space-sm flex-1">
+<!-- Search -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined text-[18px] text-text-secondary absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-lg bg-canvas-bg font-body-sm text-body-sm text-on-surface placeholder:text-text-secondary focus:outline-none focus:bg-surface-container-low transition-colors" id="audit-search" placeholder="Search by Action ID, Actor, or Hash..." type="text"/>
+</div>
+<!-- Date Range Selector -->
+<div class="relative">
+<select class="h-9 pl-3 pr-8 rounded-lg bg-canvas-bg font-label-md text-label-md text-on-surface appearance-none cursor-pointer focus:outline-none focus:bg-surface-container-low" id="date-range">
+<option selected="" value="24h">Last 24 Hours</option>
+<option value="7d">Last 7 Days</option>
+<option value="30d">Last 30 Days</option>
+<option value="custom">Custom UTC Window</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-text-secondary absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Event Type Filter -->
+<div class="relative">
+<select class="h-9 pl-3 pr-8 rounded-lg bg-canvas-bg font-label-md text-label-md text-on-surface appearance-none cursor-pointer focus:outline-none focus:bg-surface-container-low" id="event-filter">
+<option selected="" value="ALL">All Events</option>
+<option value="ENVELOPE_CREATED">Envelope Created</option>
+<option value="VOICE_VERIFIED">Voice Verified</option>
+<option value="POLICY_HOLD">Policy Hold</option>
+<option value="WEBAUTHN_STEP_UP">WebAuthn Step-Up</option>
+<option value="PERMIT_MINTED">Permit Minted</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-text-secondary absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">filter_list</span>
+</div>
+</div>
+<!-- Export Button -->
+<button class="h-9 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-space-sm hover:bg-on-secondary-fixed-variant transition-colors cursor-pointer shrink-0" id="export-worm-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Signed WORM Ledger (JSON/CSV)</span>
+</button>
+</div>
+<!-- Main Asymmetric Split-Pane: 7:5 Ratio -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Pane (7 cols): High-Density Audit Ledger Table -->
+<div class="xl:col-span-7 bg-surface rounded-lg shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">receipt_long</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Chronological Ledger</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-text-secondary" id="ledger-count">SHOWING 6 OF 14,892 RECORDS</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-canvas-bg text-text-secondary">
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Timestamp (UTC)</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Event ID</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Envelope ID</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Event Type</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Actor / System</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Outcome</th>
+<th class="py-2.5 px-3 font-label-sm text-label-sm uppercase tracking-wider">Crypto Hash</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm" id="audit-table-body">
+<!-- Row 1 (Selected Default) -->
+<tr class="audit-row bg-surface-container-low cursor-pointer transition-colors" data-id="evt_994821a" data-type="WEBAUTHN_STEP_UP">
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">2025-05-14 14:32:09</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-on-surface font-medium whitespace-nowrap">evt_994821a</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-secondary font-medium whitespace-nowrap">env_gh_982410a</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container">WEBAUTHN STEP-UP</span>
+</td>
+<td class="py-3 px-3 text-on-surface whitespace-nowrap">m.vance@acme.io</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-status-success">AUTHORIZED</span>
+</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">sha256:9f84c2...e10a</td>
+</tr>
+<!-- Row 2 -->
+<tr class="audit-row bg-surface hover:bg-canvas-bg cursor-pointer transition-colors" data-id="evt_994820f" data-type="PERMIT_MINTED">
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">2025-05-14 14:32:08</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-on-surface font-medium whitespace-nowrap">evt_994820f</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-secondary font-medium whitespace-nowrap">env_gh_982410a</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed">PERMIT MINTED</span>
+</td>
+<td class="py-3 px-3 text-on-surface whitespace-nowrap">policy-engine-v4</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-status-success">HASH_MATCH</span>
+</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">sha256:7d31a9...44bc</td>
+</tr>
+<!-- Row 3 -->
+<tr class="audit-row bg-surface hover:bg-canvas-bg cursor-pointer transition-colors" data-id="evt_994818c" data-type="POLICY_HOLD">
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">2025-05-14 14:29:41</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-on-surface font-medium whitespace-nowrap">evt_994818c</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-secondary font-medium whitespace-nowrap">env_fin_982410_wire</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-error-container text-on-error-container">POLICY HOLD</span>
+</td>
+<td class="py-3 px-3 text-on-surface whitespace-nowrap">treasury-bot-02</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-status-warning">ON_HOLD</span>
+</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">sha256:4a10f8...92d1</td>
+</tr>
+<!-- Row 4 -->
+<tr class="audit-row bg-surface hover:bg-canvas-bg cursor-pointer transition-colors" data-id="evt_994815b" data-type="VOICE_VERIFIED">
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">2025-05-14 14:25:17</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-on-surface font-medium whitespace-nowrap">evt_994815b</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-secondary font-medium whitespace-nowrap">env_fin_982410_wire</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container">VOICE VERIFIED</span>
+</td>
+<td class="py-3 px-3 text-on-surface whitespace-nowrap">detectifai-aletheia</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-status-success">ALETHEIA_REAL</span>
+</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">sha256:2c98e4...11f0</td>
+</tr>
+<!-- Row 5 -->
+<tr class="audit-row bg-surface hover:bg-canvas-bg cursor-pointer transition-colors" data-id="evt_994811d" data-type="VOICE_VERIFIED">
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">2025-05-14 14:18:03</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-on-surface font-medium whitespace-nowrap">evt_994811d</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-secondary font-medium whitespace-nowrap">env_3b8112e4f0</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container">VOICE VERIFIED</span>
+</td>
+<td class="py-3 px-3 text-on-surface whitespace-nowrap">detectifai-eidos</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-status-success">EIDOS_MATCH</span>
+</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">sha256:8b55d1...77a3</td>
+</tr>
+<!-- Row 6 -->
+<tr class="audit-row bg-surface hover:bg-canvas-bg cursor-pointer transition-colors" data-id="evt_994809e" data-type="ENVELOPE_CREATED">
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">2025-05-14 14:17:59</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-on-surface font-medium whitespace-nowrap">evt_994809e</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-secondary font-medium whitespace-nowrap">env_3b8112e4f0</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">ENVELOPE CREATED</span>
+</td>
+<td class="py-3 px-3 text-on-surface whitespace-nowrap">github-actions-ci</td>
+<td class="py-3 px-3 whitespace-nowrap">
+<span class="font-mono-badge text-mono-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-status-success">HASH_MATCH</span>
+</td>
+<td class="py-3 px-3 font-mono-data text-mono-data text-text-secondary whitespace-nowrap">sha256:1e04b7...30c9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Pane (5 cols): Event Detail & Merkle Proof Inspector -->
+<div class="xl:col-span-5 bg-surface rounded-lg shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md bg-primary-container text-on-primary flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-mono-badge text-mono-badge uppercase text-primary-fixed-dim">Merkle Proof Inspector</span>
+<span class="font-headline-sm text-headline-sm text-on-primary" id="inspector-title">env_gh_982410a · WebAuthn Step-Up</span>
+</div>
+<button class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-mono-badge text-mono-badge flex items-center gap-1 cursor-pointer hover:opacity-90 transition-opacity" id="verify-merkle-btn" type="button">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span id="verify-badge-text">VERIFIED INTACT</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Hash Chain Visualization -->
+<div class="bg-canvas-bg rounded-lg p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-secondary">Previous Block Hash</span>
+<span class="font-mono-badge text-mono-badge text-text-secondary">BLOCK #48,911</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface bg-surface px-2.5 py-1.5 rounded truncate" id="inspector-prev-hash">sha256:7d31a9c408f2b11e904a8c3d55e12b709a44bc</div>
+<div class="flex items-center justify-center py-0.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-secondary">Current Event Hash</span>
+<span class="font-mono-badge text-mono-badge text-status-success">SHA-256 MATCH</span>
+</div>
+<div class="font-mono-data text-mono-data text-on-surface bg-surface px-2.5 py-1.5 rounded truncate" id="inspector-curr-hash">sha256:9f84c2b19a04e77d318f5c2a19b04e88d1e10a</div>
+</div>
+<!-- Canonical JCS Payload -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-text-secondary">Canonical JCS Payload (RFC 8785)</span>
+<button class="font-mono-badge text-mono-badge text-secondary hover:underline cursor-pointer flex items-center gap-1" id="copy-jcs-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>COPY JSON</span>
+</button>
+</div>
+<pre class="bg-primary text-inverse-on-surface p-space-md rounded-lg font-mono-data text-mono-data overflow-x-auto leading-relaxed" id="inspector-jcs">{
+  "action_envelope_id": "env_gh_982410a",
+  "actor": "m.vance@acme.io",
+  "event_id": "evt_994821a",
+  "event_type": "WEBAUTHN_STEP_UP",
+  "hardware_attestation": {
+    "aaguid": "cb69481e-8ff7-4093-99ec-5306d5e0a2b1",
+    "rp_id": "gateway.actionlock.io",
+    "user_verified": true
+  },
+  "outcome": "AUTHORIZED",
+  "permit_id": "prm_live_88412f",
+  "timestamp_utc": "2025-05-14T14:32:09.412Z"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const records = {
+      evt_994821a: {
+        title: "env_gh_982410a · WebAuthn Step-Up",
+        prevHash: "sha256:7d31a9c408f2b11e904a8c3d55e12b709a44bc",
+        currHash: "sha256:9f84c2b19a04e77d318f5c2a19b04e88d1e10a",
+        jcs: {
+          action_envelope_id: "env_gh_982410a",
+          actor: "m.vance@acme.io",
+          event_id: "evt_994821a",
+          event_type: "WEBAUTHN_STEP_UP",
+          hardware_attestation: {
+            aaguid: "cb69481e-8ff7-4093-99ec-5306d5e0a2b1",
+            rp_id: "gateway.actionlock.io",
+            user_verified: true
+          },
+          outcome: "AUTHORIZED",
+          permit_id: "prm_live_88412f",
+          timestamp_utc: "2025-05-14T14:32:09.412Z"
+        }
+      },
+      evt_994820f: {
+        title: "env_gh_982410a · Permit Minted",
+        prevHash: "sha256:4a10f8b22c91d04e883a1b7c90e44a12f092d1",
+        currHash: "sha256:7d31a9c408f2b11e904a8c3d55e12b709a44bc",
+        jcs: {
+          action_envelope_id: "env_gh_982410a",
+          actor: "policy-engine-v4",
+          event_id: "evt_994820f",
+          event_type: "PERMIT_MINTED",
+          outcome: "HASH_MATCH",
+          policy_ref: "pol_prod_deploy_v2",
+          ttl_seconds: 300,
+          timestamp_utc: "2025-05-14T14:32:08.104Z"
+        }
+      },
+      evt_994818c: {
+        title: "env_fin_982410_wire · Policy Hold",
+        prevHash: "sha256:2c98e4a110b3f92c441e8d7a60b12c33e111f0",
+        currHash: "sha256:4a10f8b22c91d04e883a1b7c90e44a12f092d1",
+        jcs: {
+          action_envelope_id: "env_fin_982410_wire",
+          actor: "treasury-bot-02",
+          amount_usd: 2450000,
+          event_id: "evt_994818c",
+          event_type: "POLICY_HOLD",
+          outcome: "ON_HOLD",
+          reason: "DUAL_HARDWARE_STEP_UP_REQUIRED",
+          timestamp_utc: "2025-05-14T14:29:41.882Z"
+        }
+      },
+      evt_994815b: {
+        title: "env_fin_982410_wire · Voice Verified",
+        prevHash: "sha256:8b55d1c902a4e81b330f9c6d51a03b22d077a3",
+        currHash: "sha256:2c98e4a110b3f92c441e8d7a60b12c33e111f0",
+        jcs: {
+          action_envelope_id: "env_fin_982410_wire",
+          actor: "detectifai-aletheia",
+          confidence_score: 0.994,
+          event_id: "evt_994815b",
+          event_type: "VOICE_VERIFIED",
+          outcome: "ALETHEIA_REAL",
+          timestamp_utc: "2025-05-14T14:25:17.209Z"
+        }
+      },
+      evt_994811d: {
+        title: "env_3b8112e4f0 · Voice Verified",
+        prevHash: "sha256:1e04b7d801c3f70a229e8b5c40f92a11c030c9",
+        currHash: "sha256:8b55d1c902a4e81b330f9c6d51a03b22d077a3",
+        jcs: {
+          action_envelope_id: "env_3b8112e4f0",
+          actor: "detectifai-eidos",
+          event_id: "evt_994811d",
+          event_type: "VOICE_VERIFIED",
+          outcome: "EIDOS_MATCH",
+          voiceprint_id: "vp_cfo_0912",
+          timestamp_utc: "2025-05-14T14:18:03.551Z"
+        }
+      },
+      evt_994809e: {
+        title: "env_3b8112e4f0 · Envelope Created",
+        prevHash: "sha256:00000000000000000000000000000000000000",
+        currHash: "sha256:1e04b7d801c3f70a229e8b5c40f92a11c030c9",
+        jcs: {
+          action_envelope_id: "env_3b8112e4f0",
+          actor: "github-actions-ci",
+          commit_sha: "a94f21c8e",
+          event_id: "evt_994809e",
+          event_type: "ENVELOPE_CREATED",
+          outcome: "HASH_MATCH",
+          timestamp_utc: "2025-05-14T14:17:59.012Z"
+        }
+      }
+    };
+
+    const rows = document.querySelectorAll('.audit-row');
+    const titleEl = document.getElementById('inspector-title');
+    const prevHashEl = document.getElementById('inspector-prev-hash');
+    const currHashEl = document.getElementById('inspector-curr-hash');
+    const jcsEl = document.getElementById('inspector-jcs');
+    const searchInput = document.getElementById('audit-search');
+    const eventFilter = document.getElementById('event-filter');
+    const ledgerCount = document.getElementById('ledger-count');
+
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        rows.forEach(r => {
+          r.classList.remove('bg-surface-container-low');
+          r.classList.add('bg-surface');
+        });
+        row.classList.remove('bg-surface');
+        row.classList.add('bg-surface-container-low');
+
+        const data = records[row.dataset.id];
+        if (data) {
+          titleEl.textContent = data.title;
+          prevHashEl.textContent = data.prevHash;
+          currHashEl.textContent = data.currHash;
+          jcsEl.textContent = JSON.stringify(data.jcs, null, 2);
+        }
+      });
+    });
+
+    function filterRows() {
+      const q = searchInput.value.toLowerCase().trim();
+      const type = eventFilter.value;
+      let visible = 0;
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const rowType = row.dataset.type;
+        const matchesSearch = !q || text.includes(q);
+        const matchesType = type === 'ALL' || rowType === type;
+        if (matchesSearch && matchesType) {
+          row.style.display = '';
+          visible++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      ledgerCount.textContent = `SHOWING ${visible} OF 14,892 RECORDS`;
+    }
+
+    searchInput.addEventListener('input', filterRows);
+    eventFilter.addEventListener('change', filterRows);
+
+    document.getElementById('verify-merkle-btn').addEventListener('click', function () {
+      const badgeText = document.getElementById('verify-badge-text');
+      badgeText.textContent = 'VERIFYING...';
+      setTimeout(() => {
+        badgeText.textContent = 'VERIFIED INTACT';
+      }, 450);
+    });
+
+    document.getElementById('copy-jcs-btn').addEventListener('click', function () {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(jcsEl.textContent);
+      }
+      const span = this.querySelector('span:last-child');
+      span.textContent = 'COPIED';
+      setTimeout(() => {
+        span.textContent = 'COPY JSON';
+      }, 1200);
+    });
+  })();
+</script></main></div></body></html>
